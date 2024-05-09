@@ -1,7 +1,9 @@
-#!/bin/bash
+#!/bin/zsh
+
+export SCRIPT_DIR=${0:a:h}
 
 # Install tools
-sudo pacman -Sy --needed git jq tmux zsh curl mtr git-delta flatpak libpamac-flatpak-plugin lazygit
+sudo pacman -Sy --needed git go jq yq tmux zsh curl mtr git-delta flatpak libpamac-flatpak-plugin lazygit neovim ripgrep
 
 # Setup flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -25,11 +27,11 @@ flatpak install flathub com.transmissionbt.Transmission
 flatpak install flathub tv.plex.PlexDesktop
 flatpak install flathub org.standardnotes.standardnotes
 
-if [ ! -d "$(HOME)/bin" ]; then
-    mkdir $(HOME)/bin
+if [ ! -d "${HOME}/bin" ]; then
+    mkdir ${HOME}/bin
 fi
 
-cd $(HOME)/bin
+cd ${HOME}/bin
 
 # Install jetbrains toolbox
 curl https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.3.0.30876.tar.gz -o - | tar -xz
@@ -50,5 +52,17 @@ curl https://get.helm.sh/helm-v3.14.4-linux-amd64.tar.gz -o - | tar -xz
 mv linux-amd64/helm helm
 rm -rf linux-amd64
 
+# Install Jira CLI
+curl -Lo ./jira https://github.com/go-jira/jira/releases/download/v1.0.27/jira-linux-amd64
+
 # Install lazydocker
-curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | DIR=$(HOME)/bin bash
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | DIR=${HOME}/bin bash
+
+# Install pbtools
+ln -svfF "${SCRIPT_DIR}/bin/pbcopy" "${HOME}/bin/pbcopy"
+ln -svfF "${SCRIPT_DIR}/bin/pbpaste" "${HOME}/bin/pbpaste"
+
+
+# Symlink config files
+ln -svfF "${SCRIPT_DIR}/dotfiles/zshrc" "${HOME}/.zshrc"
+ln -sffF "${SCRIPT_DIR}/dotfiles/tmux.conf" "${HOME}/.tmux.conf"
