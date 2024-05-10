@@ -27,41 +27,65 @@ flatpak install flathub com.transmissionbt.Transmission
 flatpak install flathub tv.plex.PlexDesktop
 flatpak install flathub org.standardnotes.standardnotes
 
+if [ ! -d "${HOME}/.oh-my-zsh/" ]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
 if [ ! -d "${HOME}/bin" ]; then
     mkdir ${HOME}/bin
 fi
 
 cd ${HOME}/bin
 
-# Install jetbrains toolbox
-curl https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.3.0.30876.tar.gz -o - | tar -xz
-mv jetbrains-toolbox-2.3.0.30876/jetbrains-toolbox jetbrains-toolbox
-chmod +x jetbrains-toolbox
-rm -rf jetbrains-toolbox-2.3.0.30876
+# Install Rust
+echo "Installing Rust..."
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -yq
+
+# Install Go
+if [ ! -d "${HOME}/.go" ]; then
+    mkdir ${HOME}/.go
+fi
+echo "Install GoLang..."
+curl -L "https://go.dev/dl/go1.22.3.linux-amd64.tar.gz" -o - | tar -xz --strip-components=1 -C ${HOME}/.go
 
 # Install kubectl
+echo "Installing kubectl..."
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 chmod +x kubectl
 
+# Install kubectx
+echo "Installing kubectx..."
+curl -L "https://github.com/ahmetb/kubectx/releases/download/v0.9.5/kubectx_v0.9.5_linux_x86_64.tar.gz" -o - | tar -xz
+chmod +x kubectx
+
+# Install k9s
+echo "Installing k9s..."
+curl -L "https://github.com/derailed/k9s/releases/download/v0.32.4/k9s_Linux_amd64.tar.gz" -o - | tar -xz 
+chmod +x k9s
+rm -rf LICENSE README.md
+
 # Install kind
-curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.22.0/kind-linux-amd64
+echo "Instaling kind..."
+curl -Lo ./kind "https://kind.sigs.k8s.io/dl/v0.22.0/kind-linux-amd64"
 chmod +x kind
 
 # Install helm
-curl https://get.helm.sh/helm-v3.14.4-linux-amd64.tar.gz -o - | tar -xz
-mv linux-amd64/helm helm
-rm -rf linux-amd64
+echo "Installing helm..."
+curl "https://get.helm.sh/helm-v3.14.4-linux-amd64.tar.gz" -o - | tar -xz --strip-components=1
+chmod +x helm
 
 # Install Jira CLI
-curl -Lo ./jira https://github.com/go-jira/jira/releases/download/v1.0.27/jira-linux-amd64
+echo "Installing jira..."
+curl -Lo ./jira "https://github.com/go-jira/jira/releases/download/v1.0.27/jira-linux-amd64"
+chmod +x jira
 
 # Install lazydocker
-curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | DIR=${HOME}/bin bash
+echo "Installing lazydocker..."
+curl "https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh" | DIR=${HOME}/bin bash
 
 # Install pbtools
 ln -svfF "${SCRIPT_DIR}/bin/pbcopy" "${HOME}/bin/pbcopy"
 ln -svfF "${SCRIPT_DIR}/bin/pbpaste" "${HOME}/bin/pbpaste"
-
 
 # Symlink config files
 ln -svfF "${SCRIPT_DIR}/dotfiles/zshrc" "${HOME}/.zshrc"
