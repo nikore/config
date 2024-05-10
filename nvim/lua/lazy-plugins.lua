@@ -41,7 +41,6 @@ require('lazy').setup({
     require 'kickstart/plugins/neo-tree',
     require 'kickstart/plugins/telescope',
     require 'kickstart/plugins/todo-comments',
-
     require 'kickstart/plugins/treesitter',
     require 'kickstart/plugins/which-key',
 

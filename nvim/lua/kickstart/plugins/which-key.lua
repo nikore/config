@@ -29,6 +29,11 @@ return {
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
         ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
         ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
+        ['f'] = {
+          "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+          "Find files",
+        },
+        ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
       }
       -- visual mode
       require('which-key').register({
