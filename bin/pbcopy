@@ -1,5 +1,3 @@
 #!/bin/bash
 
-echo "pbcopy called"
-
 cat "${1:-/dev/stdin}" | xclip -selection clipboard -in &> /dev/null
