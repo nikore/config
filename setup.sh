@@ -48,6 +48,10 @@ fi
 echo "Install GoLang..."
 curl -L "https://go.dev/dl/go1.22.3.linux-amd64.tar.gz" -o - | tar -xz --strip-components=1 -C ${HOME}/.go
 
+# install Alacritty
+echo "Installing Alacritty..."
+${HOME}/.cargo/bin/cargo install alacritty
+
 # Install kubectl
 echo "Installing kubectl..."
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
@@ -88,5 +92,6 @@ ln -svfF "${SCRIPT_DIR}/bin/pbcopy" "${HOME}/bin/pbcopy"
 ln -svfF "${SCRIPT_DIR}/bin/pbpaste" "${HOME}/bin/pbpaste"
 
 # Symlink config files
-ln -svfF "${SCRIPT_DIR}/dotfiles/zshrc" "${HOME}/.zshrc"
+ln -sffF "${SCRIPT_DIR}/dotfiles/zshrc" "${HOME}/.zshrc"
 ln -sffF "${SCRIPT_DIR}/dotfiles/tmux.conf" "${HOME}/.tmux.conf"
+ln -sffF "${SCRIPT_DIR}/dotfiles/alacritty.toml" "${HOME}/.alacritty.toml"
