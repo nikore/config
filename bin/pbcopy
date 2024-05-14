@@ -1,3 +1,4 @@
 #!/bin/bash
 
 cat "${1:-/dev/stdin}" | xclip -selection clipboard -in &> /dev/null
+

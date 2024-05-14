@@ -216,9 +216,9 @@ return {
 					end,
 				},
 			})
-			local cfg = require'go.lsp'.config()
-			require('lspconfig').gopls.setup(cfg)
+			local cfg = require("go.lsp").config()
+			require("lspconfig").gopls.setup(cfg)
 		end,
 	},
 }
--- vim: ts=2 sts=2 sw=2 et
+

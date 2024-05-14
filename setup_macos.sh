@@ -79,3 +79,4 @@ brew install --cask blackhole-2ch
 if [ ! -d "$(HOME)/bin" ]; then
     mkdir $(HOME)/bin
 fi
+

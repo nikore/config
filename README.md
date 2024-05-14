@@ -24,3 +24,4 @@ The `setup_macos.sh` script only works on recent copies of macos, generally this
 ```
 ./setup_macos.sh
 ```
+

@@ -49,3 +49,4 @@ customCommands:
     command: "git fetch -p"
     context: 'remoteBranches'
     description: 'Prune local branches that are no longer in remote (Sync)'
+

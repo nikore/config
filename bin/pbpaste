@@ -1,3 +1,4 @@
 #!/bin/bash
 
 xclip -out -selection clipboard
+
