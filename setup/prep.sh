@@ -1,11 +1,5 @@
 #!/bin/zsh
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    linux
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    macOS
-fi
-
 func macOS() {
     # Command Line Tools
     which -s xcode-select
@@ -27,3 +21,10 @@ func linux() {
     # Setup flatpak
     flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 }
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    linux
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    macOS
+fi
+

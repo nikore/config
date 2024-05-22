@@ -1,11 +1,5 @@
 #!/bin/zsh
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    linux
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    macOS
-fi
-
 func macOS() {
     # Fonts
     brew tap homebrew/cask-fonts
@@ -53,3 +47,10 @@ func linux() {
 
     ${HOME}/.cargo/bin/cargo install alacritty
 }
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    linux
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    macOS
+fi
+

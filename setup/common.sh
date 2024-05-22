@@ -1,7 +1,6 @@
 #!/bin/zsh
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    brew install bat
     brew install bottom
     brew install coreutils
     brew install curl
@@ -16,7 +15,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     brew install sk
 fi
 
-
+brew install bat
 brew install fzf
 brew install fzy
 brew install go
@@ -37,3 +36,4 @@ brew install zsh-syntax-highlighting
 brew install zsh-vi-mode
 brew install spotify-tui
 brew install go-jira
+

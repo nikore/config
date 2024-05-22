@@ -5,7 +5,6 @@ gui:
     selectedRangeBgColor:
       - black
   enlargedSideViewLocation: 'top'
-  showCommandLog: false
   showIcons: true
   scrollPastBottom: false
   showCommandLog: true
