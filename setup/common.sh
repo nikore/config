@@ -15,6 +15,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     brew install sk
 fi
 
+brew install bazelisk 
 brew install bat
 brew install fzf
 brew install fzy

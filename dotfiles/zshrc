@@ -10,7 +10,7 @@ export ZSH=${HOME}/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="afowler"
 
-plugins=(archlinux bazel brew docker docker-compose genpass git golang helm kubectl kubectx jira ssh-agent systemadmin tmux vscode)
+plugins=(archlinux bazel brew docker docker-compose genpass git golang helm kubectl kubectx rust ssh-agent systemadmin tmux vscode)
 
 # Settings
 export ZSH_TMUX_AUTOSTART=true
@@ -27,11 +27,13 @@ export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 
 export GTK_THEME=Arc-Darker
-export JAVA_HOME=/usr/java/default
+export JAVA_HOME=/home/linuxbrew/.linuxbrew/Cellar/openjdk/21.0.3
 
 export HOMEBREW_NO_ENV_HINTS=true
 
 alias vim='nvim'
+
+source ${HOME}/.local_env_zsh
 
 # Load zsh to apply plugins and settings
 source ${ZSH}/oh-my-zsh.sh
