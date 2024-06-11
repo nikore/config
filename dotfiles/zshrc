@@ -13,7 +13,7 @@ ZSH_THEME="afowler"
 plugins=(archlinux bazel brew docker docker-compose genpass git golang helm kubectl kubectx rust ssh-agent systemadmin tmux vscode)
 
 # Settings
-export ZSH_TMUX_AUTOSTART=true
+#export ZSH_TMUX_AUTOSTART=true
 
 export LANG=en_US.UTF-8
 
@@ -27,7 +27,7 @@ export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 
 export GTK_THEME=Arc-Darker
-export JAVA_HOME=/home/linuxbrew/.linuxbrew/Cellar/openjdk/21.0.3
+export JAVA_HOME=/home/mattc/.homebrew/Cellar/openjdk/21.0.3
 
 export HOMEBREW_NO_ENV_HINTS=true
 
