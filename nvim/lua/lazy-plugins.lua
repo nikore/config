@@ -45,8 +45,8 @@ require("lazy").setup({
 	require("kickstart.plugins.which-key"),
 
 	-- themes
-	-- require("themes.tokyonight"),
-	require("themes.dracula"),
+	require("themes.tokyonight"),
+	-- require("themes.dracula"),
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
 	--    This is the easiest way to modularize your config.
@@ -75,4 +75,3 @@ require("lazy").setup({
 		},
 	},
 })
-
