@@ -10,10 +10,6 @@ return {
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { "j-hui/fidget.nvim", opts = {} },
-
-      -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
-      -- used for completion, annotations and signatures of Neovim apis
-      { "folke/neodev.nvim", opts = {} },
     },
     config = function()
       -- Brief aside: **What is LSP?**
@@ -210,8 +206,6 @@ return {
           end,
         },
       })
-      local cfg = require("go.lsp").config()
-      require("lspconfig").gopls.setup(cfg)
     end,
   },
 }
