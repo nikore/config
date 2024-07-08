@@ -13,6 +13,9 @@ decorations_theme_variant = "Dark"
 background = '#24283b'
 foreground = '#c0caf5'
 
+[font.normal]
+family = "JetBrainsMonoNL Nerd Font"
+
 #[colors.cursor]
 #cursor = '#c0caf5'
 #text = '#24283b'
