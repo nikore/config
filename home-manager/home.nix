@@ -1,9 +1,9 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, lib, ... }:
 
 let
   locale = "en_US.UTF-8";
-  homedir = "/home/matt";
-  username = "matt";
+  homedir = builtins.getEnv "HOME";
+  username = builtins.getEnv "USER";
 in 
 {
   nixpkgs = {

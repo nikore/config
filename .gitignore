@@ -7,6 +7,5 @@ nvim/plugin/*
 .luarc.json
 lazy-lock.json
 .colorscheme
-.background
-.theme
-alacritty.yml
+
+result
