@@ -104,10 +104,6 @@
       "format" = "$singularity$kubernetes$directory$vcsh$fossil_branch$git_branch$git_commit$git_state$git_status$hg_branch$pijul_channel$docker_context$package$c$cmake$cobol$daml$dart$deno$dotnet$elixir$elm$erlang$fennel$golang$guix_shell$haskell$haxe$helm$java$julia$kotlin$gradle$lua$nim$nodejs$ocaml$opa$perl$php$pulumi$purescript$python$raku$rlang$red$ruby$rust$scala$solidity$swift$terraform$vlang$vagrant$zig$buf$conda$meson$spack$memory_usage$aws$gcloud$openstack$azure$crystal$custom$status$os$battery($nix_shell$container$git_metrics\n)$cmd_duration\n$hostname$localip$shlvl$shell$env_var$jobs$sudo$username$character";
       "git_branch" = {
         "format" = " [$branch(:$remote_branch)]($style)";
-        "ignore_branches" = [
-          "main"
-          "master"
-        ];
         "only_attached" = true;
         "style" = "italic bright-blue";
         "symbol" = "[△](bold italic bright-blue)";
