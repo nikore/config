@@ -17,6 +17,25 @@
    '';
   in {
   xsession.enable = true;
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Dracula";
+      package = pkgs.dracula-theme;
+    };
+    iconTheme = {
+      name = "Dracula";
+      package = pkgs.dracula-icon-theme;
+    };
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme=1;
+    };
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme=1;
+    };
+  };
+
   home.packages = with pkgs; [
     nixgl.auto.nixGLDefault
     (nixGLWrap pkgs.bitwarden-desktop)
@@ -30,6 +49,7 @@
     (nixGLWrap pkgs.obs-studio)
     (nixGLWrap pkgs.plexamp)
     (nixGLWrap pkgs.plex-media-player)
+    (nixGLWrap pkgs.runelite)
     (nixGLWrap pkgs.signal-desktop)
     (nixGLWrap pkgs.slack)
     (nixGLWrap pkgs.spotify)

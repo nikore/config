@@ -15,6 +15,7 @@
     glibcLocales
     grpcurl
     go-jira
+    helmfile
     htop
     jq
     k9s

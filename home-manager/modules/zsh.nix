@@ -19,6 +19,8 @@
       hm = "home-manager";
       lg = "lazygit";
       k = "kubectl";
+      b = "bazelisk";
+      bazel = "bazelisk";
     };
 
     initExtraFirst = builtins.readFile ./zsh/extrafirst.zsh;

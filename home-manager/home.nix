@@ -21,6 +21,7 @@ in
 
     sessionVariables = {
       LANG = locale;
+      LANGUAGE = locale;
       LC_ALL = locale;
       VISUAL = "nvim";
       EDITOR = "nvim";
@@ -36,28 +37,6 @@ in
     };
   }; 
 
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Dracula";
-      package = pkgs.dracula-theme;
-    };
-    iconTheme = {
-      name = "Dracula";
-      package = pkgs.dracula-icon-theme;
-    };
-    gtk3.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-    gtk4.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-  };
-
   imports = [
     ./modules/packages.nix
     ./modules/git.nix
@@ -70,7 +49,7 @@ in
     ./modules/neovim.nix
     ./modules/fonts.nix
   ] ++ lib.optional (builtins.pathExists "${homedir}/.private/private.nix") "${homedir}/.private/private.nix"
-    ++ lib.optional (builtins.pathExists ./desktop.nix) ./desktop.nix;
+    ++ lib.optional (builtins.pathExists "${homedir}/.config/home-manager/desktop.nix") "${homedir}/.config/home-manager/desktop.nix";
 
   programs.home-manager.enable = true;
 }
