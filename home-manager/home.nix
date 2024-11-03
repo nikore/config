@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ config, ... }:
 let
   locale = "en_US.UTF-8";
 in 
@@ -15,14 +15,6 @@ in
       VISUAL = "nvim";
       EDITOR = "nvim";
       GTK_THEME = "Dracula";
-    };
-
-    pointerCursor = {
-      gtk.enable = true;
-      x11.enable = true; 
-      name = "macOS-BigSur";
-      size = 24;
-      package = pkgs.apple-cursor;
     };
   }; 
 
