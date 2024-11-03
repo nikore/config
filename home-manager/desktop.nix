@@ -1,22 +1,17 @@
 {
+  inputs,
   pkgs,
-  lib,
+  config,
   ...
-}: let
-  nixgl = import <nixgl> {} ;
-  nixGLWrap = pkg: pkgs.runCommand "${pkg.name}-nixgl-wrapper" {} ''
-    mkdir $out
-    ln -s ${pkg}/* $out
-    rm $out/bin
-    mkdir $out/bin
-    for bin in ${pkg}/bin/*; do
-      wrapped_bin=$out/bin/$(basename $bin)
-      echo "exec ${lib.getExe' nixgl.auto.nixGLDefault "nixGL"} $bin \"\$@\"" > $wrapped_bin
-      chmod +x $wrapped_bin
-    done
-   '';
-  in {
+}: {
   xsession.enable = true;
+
+  nixGL.packages = inputs.nixGL.packages;
+  nixGL.defaultWrapper = "mesa";
+  nixGL.installScripts = [
+    "mesa"
+  ];
+  nixGL.vulkan.enable = true;
 
   gtk = {
     enable = true;
@@ -37,32 +32,31 @@
   };
 
   home.packages = with pkgs; [
-    nixgl.auto.nixGLDefault
-    (nixGLWrap pkgs.bitwarden-desktop)
-    (nixGLWrap pkgs.darktable)
-    (nixGLWrap pkgs.discord)
-    (nixGLWrap pkgs.filezilla)
-    (nixGLWrap pkgs.gimp)
-    (nixGLWrap pkgs.handbrake)
-    (nixGLWrap pkgs.heroic-unwrapped)
-    (nixGLWrap pkgs.lutris-unwrapped)
-    (nixGLWrap pkgs.obs-studio)
-    (nixGLWrap pkgs.plexamp)
-    (nixGLWrap pkgs.plex-media-player)
-    (nixGLWrap pkgs.runelite)
-    (nixGLWrap pkgs.signal-desktop)
-    (nixGLWrap pkgs.slack)
-    (nixGLWrap pkgs.spotify)
+    (config.lib.nixGL.wrap pkgs.bitwarden-desktop)
+    (config.lib.nixGL.wrap pkgs.google-chrome)
+    (config.lib.nixGL.wrap pkgs.darktable)
+    (config.lib.nixGL.wrap pkgs.discord)
+    (config.lib.nixGL.wrap pkgs.filezilla)
+    (config.lib.nixGL.wrap pkgs.gimp)
+    (config.lib.nixGL.wrap pkgs.handbrake)
+    (config.lib.nixGL.wrap pkgs.heroic-unwrapped)
+    (config.lib.nixGL.wrap pkgs.lutris-unwrapped)
+    (config.lib.nixGL.wrap pkgs.obs-studio)
+    (config.lib.nixGL.wrap pkgs.plexamp)
+    (config.lib.nixGL.wrap pkgs.plex-media-player)
+    (config.lib.nixGL.wrap pkgs.runelite)
+    (config.lib.nixGL.wrap pkgs.signal-desktop)
+    (config.lib.nixGL.wrap pkgs.slack)
+    (config.lib.nixGL.wrap pkgs.spotify)
     spotifyd
-    (nixGLWrap pkgs.standardnotes)
-    (nixGLWrap pkgs.vlc)
+    (config.lib.nixGL.wrap pkgs.standardnotes)
+    (config.lib.nixGL.wrap pkgs.vlc)
   ];
 
   programs.alacritty = {
     enable = true;
-    package = (nixGLWrap pkgs.alacritty);
+    package = (config.lib.nixGL.wrap pkgs.alacritty);
     settings = {
-      "shell" = "${pkgs.zsh}/bin/zsh";
       "colors" = {
         "bright" = {
           "black" = "#414868";
@@ -107,7 +101,12 @@
           "family" = "JetBrainsMonoNL Nerd Font";
         };
       };
-      "live_config_reload" = true;
+      "general" = {
+        "live_config_reload" = true;
+      };
+      "terminal" = {
+        "shell" = "${pkgs.zsh}/bin/zsh";
+      };
       "window" = {
         "blur" = true;
         "decorations_theme_variant" = "Dark";
@@ -120,15 +119,7 @@
 
   programs.brave = {
     enable = true;
-    package = (nixGLWrap pkgs.brave);
-    extensions = [
-      "nngceckbapebfimnlniiiahkandclblb" #bitwarden
-    ];
-  };
-
-  programs.google-chrome = {
-    enable = true;
-    package = (nixGLWrap pkgs.google-chrome);
+    package = (config.lib.nixGL.wrap pkgs.brave);
   };
 
   programs.rofi = {
