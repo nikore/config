@@ -45,8 +45,18 @@
         "TERM" = "xterm-256color";
       };
       "font" = {
+        "size" = 10;
         "normal" = {
-          "family" = "JetBrainsMonoNL Nerd Font";
+          "family" = "monospace";
+          "style" = "Regular";
+        };
+        "bold" = {
+          "family" = "monospace";
+          "style" = "Bold";
+        };
+        "italic" = {
+          "family" = "monospace";
+          "style" = "Italic";
         };
       };
       "general" = {
@@ -61,6 +71,7 @@
         "dynamic_title" = true;
         "opacity" = 0.95;
         "startup_mode" = "Maximized";
+        "decorations" = "Buttonless";
       };
     };
   };

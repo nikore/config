@@ -5,9 +5,9 @@
   xsession.enable = true;
 
   nixGL.packages = inputs.nixGL.packages;
-  nixGL.defaultWrapper = "nvidia";
+  nixGL.defaultWrapper = "mesa";
   nixGL.installScripts = [
-    "nvidia"
+    "mesa"
   ];
   nixGL.vulkan.enable = true;
 

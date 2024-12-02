@@ -30,12 +30,41 @@
         modules = [
           {
             home = {
-              username = "matt";
+              username = builtins.getEnv "USER";
             };
           }
           ./home-manager/home.nix
           ./home-manager/desktop.nix
         ];        
+      };
+
+      workLaptop = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = { inherit inputs; };
+
+        modules = [
+          {
+            home = {
+              username = builtins.getEnv "USER";
+            };
+          }
+          ./home-manager/home.nix
+          ./home-manager/laptop.nix
+        ];
+      };
+
+      shellOnly = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = { inherit inputs; };
+
+        modules = [
+          {
+            home = {
+              username = builtins.getEnv "USER";
+            };
+          }
+          ./home-manager/home.nix
+        ];
       };
     };
   };

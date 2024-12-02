@@ -2,9 +2,9 @@
 
 {
   home.packages = with pkgs; [
+    _1password-cli
     bat
     bazelisk
-    bitwarden-cli
     bottom
     docker-client
     curl
@@ -45,13 +45,11 @@
     zsh
     zx
     #fonts
-    font-awesome
-    openmoji-color
+    noto-fonts-color-emoji
     google-fonts
     ubuntu_font_family
-    roboto
-    liberation_ttf
-    dejavu_fonts
-    nerdfonts
+    nerd-fonts.ubuntu
+    nerd-fonts.ubuntu-mono
+    nerd-fonts.jetbrains-mono
   ];
 }
