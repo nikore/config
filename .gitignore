@@ -7,5 +7,5 @@ nvim/plugin/*
 .luarc.json
 lazy-lock.json
 .colorscheme
-
+flake.lock
 result
