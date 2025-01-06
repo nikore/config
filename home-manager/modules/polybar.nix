@@ -2,7 +2,13 @@
 
 {
   home.packages = with pkgs; [
-    polybar
+    (pkgs.polybar.override {
+      alsaSupport = true;
+      githubSupport = true;
+      mpdSupport = true;
+      pulseSupport = true;
+      i3Support = true;
+    })
   ];
   
   home.file = {

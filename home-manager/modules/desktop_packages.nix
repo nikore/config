@@ -6,6 +6,7 @@
     (config.lib.nixGL.wrap google-chrome)
     (config.lib.nixGL.wrap darktable)
     (config.lib.nixGL.wrap discord)
+    (config.lib.nixGL.wrap dropbox-cli)
     (config.lib.nixGL.wrap filezilla)
     (config.lib.nixGL.wrap gimp)
     (config.lib.nixGL.wrap handbrake)
