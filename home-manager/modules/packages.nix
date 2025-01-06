@@ -12,6 +12,7 @@
     fd
     fzf
     git-extras
+    git-lfs
     glibcLocales
     grpcurl
     go-jira
