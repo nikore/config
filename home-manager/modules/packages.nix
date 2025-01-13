@@ -52,5 +52,6 @@
     nerd-fonts.ubuntu
     nerd-fonts.ubuntu-mono
     nerd-fonts.jetbrains-mono
+    nerd-fonts.caskaydia-cove
   ];
 }
