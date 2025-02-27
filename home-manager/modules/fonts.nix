@@ -5,19 +5,13 @@
     enable = true;
     defaultFonts = {
       serif = [
-        "Ubuntu"
-        "Noto Color Emoji"
-        "Noto Emoji"
+        "Noto Serif"
       ];
       sansSerif = [
-        "Ubuntu"
-        "Noto Color Emoji"
-        "Noto Emoji"
+        "Noto Sans"
       ];
       monospace = [
         "JetBrainsMonoNL Nerd Font"
-        "Noto Color Emoji"
-        "Noto Emoji"
       ];
       emoji = [ 
         "Noto Color Emoji"

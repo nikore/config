@@ -192,8 +192,8 @@ in
         type = "internal/temperature";
         interval = 0.5;
         thermal-zone = 0;
-        hwmon-path = "/sys/class/hwmon/hwmon1/temp1_input";
-        base-temperature = 20;
+        hwmon-path = "/sys/class/hwmon/hwmon4/temp1_input";
+        base-temperature = 40;
         warn-temperature = 70;
         units = true;
         format = "<label>";

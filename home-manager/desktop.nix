@@ -21,5 +21,6 @@
     ./modules/rofi.nix
     ./modules/polybar.nix
     ./modules/dunst.nix
+    ./modules/openrgb.nix
   ];
 }

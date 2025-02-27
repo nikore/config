@@ -21,6 +21,7 @@ in
   imports = [
     ./modules/packages.nix
     ./modules/git.nix
+    ./modules/gh.nix
     ./modules/go.nix
     ./modules/zsh.nix
     ./modules/starship.nix

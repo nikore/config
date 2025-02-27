@@ -14,7 +14,7 @@
 
       shell-integration-features = "no-cursor";
 
-      font-family = "monospace";
+      #font-family = "JetBrainsMonoNL Nerd Font Mono";
       font-variation = "wght=100";
       font-feature = [ "cv08" "cv09" "cv10" ];
       font-size = "10";
