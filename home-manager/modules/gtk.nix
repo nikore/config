@@ -6,7 +6,7 @@
       package = pkgs.dracula-theme;
     };
     theme = {
-      name = "Catppuccin-Macchiato-Compact-Blue-dark";
+      name = "catppuccin-macchiato-blue-compact";
       package = pkgs.catppuccin-gtk.override {
         size = "compact";
         accents = ["blue"];
@@ -29,7 +29,7 @@
       sort-directories-first = true;
     };
     "org/gnome/desktop/interface" = {
-      gtk-theme = "Catppuccin-Macchiato-Compact-Blue-dark";
+      gtk-theme = "catppuccin-macchiato-blue-compact";
       color-scheme = "prefer-dark";
     };
   };
@@ -46,5 +46,5 @@
     };
   };
 
-  home.sessionVariables.GTK_THEME = "Catppuccin-Macchiato-Compact-Blue-dark";
+  home.sessionVariables.GTK_THEME = "catppuccin-macchiato-blue-compact";
 }
