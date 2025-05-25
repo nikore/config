@@ -38,7 +38,8 @@
     text_icon_padding = 5
 
     frame_width = 3
-    frame_color = "#29293f"
+    frame_color = "#8aadf4"
+    highlight = "#8aadf4"
 
     gap_size = 5
 
@@ -200,21 +201,21 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#12121f"
-    foreground = "#d4d7ff"
+    background = "#24273a"
+    foreground = "#cad3f5"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#12121f"
-    foreground = "#d4d7ff"
+    background = "#24273a"
+    foreground = "#cad3f5"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_critical]
-    background = "#12121f"
-    foreground = "#d95177"
-    frame_color = "#d95177"
+    background = "#24273a"
+    foreground = "#cad3f5"
+    frame_color = "#f5a97f"
     timeout = 0

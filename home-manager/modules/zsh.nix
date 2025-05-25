@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ lib, ... }:
 
 {
   programs.zsh = {
@@ -13,7 +13,6 @@
     };
 
     shellAliases = {
-      ll = "ls -l";
       g = "git";
       h = "helm";
       hm = "home-manager";
@@ -23,12 +22,33 @@
       bazel = "bazelisk";
     };
 
-    initExtraFirst = builtins.readFile ./zsh/extrafirst.zsh;
-    initExtra = builtins.readFile ./zsh/extra.zsh;
+    initContent = lib.mkMerge [
+      (lib.mkBefore (builtins.readFile ./zsh/extrafirst.zsh))
+      (lib.mkAfter (builtins.readFile ./zsh/extra.zsh))
+    ];
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["archlinux" "bazel" "docker" "docker-compose" "genpass" "git" "golang" "helm" "kubectl" "kubectx" "rust" "ssh-agent" "systemadmin" "tmux"];
+      plugins = [
+        "1password"
+        "archlinux"
+        "bazel"
+        "docker"
+        "docker-compose"
+        "fzf"
+        "genpass"
+        "gh"
+        "git"
+        "golang"
+        "helm"
+        "kubectl"
+        "kubectx"
+        "rust"
+        "ssh"
+        "ssh-agent"
+        "systemadmin"
+        "tmux"
+      ];
       theme = "afowler";
     };
   };

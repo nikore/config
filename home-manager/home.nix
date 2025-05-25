@@ -14,12 +14,12 @@ in
       LC_ALL = locale;
       VISUAL = "nvim";
       EDITOR = "nvim";
-      GTK_THEME = "Dracula";
     };
   }; 
 
   imports = [
     ./modules/packages.nix
+    ./modules/lsd.nix
     ./modules/git.nix
     ./modules/gh.nix
     ./modules/go.nix

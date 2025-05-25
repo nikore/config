@@ -22,38 +22,38 @@
       cursor-style = "block";
       cursor-style-blink = false;
 
-      theme = "tokyo-night";
+      theme = "catppuccin-macchiato";
       term = "xterm-256color";
 
       window-theme = "dark";
       window-decoration = false;
     };
     themes = {
-      tokyo-night = {
+      catppuccin-macchiato = {
         palette = [
-          "0=#1d202f"
-          "1=#f7768e"
-          "2=#9ece6a"
-          "3=#e0af68"
-          "4=#7aa2f7"
-          "5=#bb9af7"
-          "6=#7dcfff"
-          "7=#a9b1d6"
-          "8=#414868"
-          "9=#f7768e"
-          "10=#9ece6a"
-          "11=#e0af68"
-          "12=#7aa2f7"
-          "13=#bb9af7"
-          "14=#7dcfff"
-          "15=#c0caf6"
+         "0=#494d64"
+          "1=#ed8796"
+          "2=#a6da95"
+          "3=#eed49f"
+          "4=#8aadf4"
+          "5=#f5bde6"
+          "6=#8bd5ca"
+          "7=#b8c0e0"
+          "8=#5b6078"
+          "9=#ed8796"
+          "10=#a6da95"
+          "11=#eed49f"
+          "12=#8aadf4"
+          "13=#f5bde6"
+          "14=#8bd5ca"
+          "15=#a5adcb"
         ];
-        background = "#24283b";
-        foreground = "#c0caf5";
-        cursor-color = "#c0caf5";
-        cursor-text = "#1d202f";
-        selection-background = "#364a82";
-        selection-foreground = "#c0caf5";
+        background = "#24273a";
+        foreground = "#cad3f5";
+        cursor-color = "#f4dbd6";
+        cursor-text = "#24273a";
+        selection-background = "#3a3e53";
+        selection-foreground = "#cad3f5";
       };
     };
   };

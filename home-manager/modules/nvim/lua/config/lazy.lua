@@ -29,6 +29,9 @@ require("lazy").setup({
     lazy = false,
     version = "*",
   },
-  install = { colorscheme = { "themes.tokyonight" } },
+  install = {
+    missing = true,
+    colorscheme = { "catppuccin-macchiato" },
+  },
   checker = { enabled = true },
 })

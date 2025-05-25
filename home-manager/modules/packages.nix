@@ -27,7 +27,6 @@
     kubernetes-helm
     lazygit
     lazydocker
-    lsd
     lua
     minio-client
     mtr

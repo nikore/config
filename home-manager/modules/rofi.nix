@@ -13,6 +13,6 @@
       pkgs.rofi-calc
       pkgs.rofi-emoji
     ];
-    theme = ./rofi/Arc-Dark.rasi;
+    theme = ./rofi/catppuccin-macchiato.rasi;
   }; 
 }
