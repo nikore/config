@@ -10,9 +10,9 @@
     (config.lib.nixGL.wrap filezilla)
     (config.lib.nixGL.wrap gimp)
     (config.lib.nixGL.wrap handbrake)
-    (config.lib.nixGL.wrap heroic-unwrapped)
+    (config.lib.nixGL.wrap heroic)
     i3-auto-layout
-    (config.lib.nixGL.wrap lutris-unwrapped)
+    (config.lib.nixGL.wrap lutris)
     (config.lib.nixGL.wrap obs-studio)
     (config.lib.nixGL.wrap plexamp)
     (config.lib.nixGL.wrap plex-media-player)

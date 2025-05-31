@@ -22,5 +22,6 @@
     ./modules/polybar.nix
     ./modules/dunst.nix
     ./modules/openrgb.nix
+    ./modules/zen.nix
   ];
 }
