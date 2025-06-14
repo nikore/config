@@ -15,7 +15,7 @@
     (config.lib.nixGL.wrap lutris)
     (config.lib.nixGL.wrap obs-studio)
     (config.lib.nixGL.wrap plexamp)
-    (config.lib.nixGL.wrap plex-media-player)
+    (config.lib.nixGL.wrap plex-desktop)
     (config.lib.nixGL.wrap runelite)
     (config.lib.nixGL.wrap signal-desktop)
     (config.lib.nixGL.wrap slack)
