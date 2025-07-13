@@ -7,3 +7,7 @@ fi
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
     source $HOME/.nix-profile/etc/profile.d/nix.sh
 fi
+
+path=("$HOME/.cargo/bin" $path)
+path=("$HOME/bin" $path)
+
