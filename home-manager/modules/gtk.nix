@@ -35,16 +35,23 @@
   };
   qt = {
     enable = true;
-    platformTheme.name = "gtk";
-    style = {
-      name = "gtk2";
-      package = pkgs.catppuccin-gtk.override {
-        size = "compact";
-        accents = ["blue"];
-        variant = "macchiato";
-      };
-    };
+    platformTheme.name = "qt6ct";
+    style.name = "Fusion";
   };
 
   home.sessionVariables.GTK_THEME = "catppuccin-macchiato-blue-compact";
+
+  services.xsettingsd = {
+    enable = true;
+    settings = {
+      "Xft/Hinting" = 1;
+      "Xft/HintStyle" = "hintslight";
+      "Xft/Antialias" = 1;
+      "Xft/RGBA" = "rgb";
+      "Xft/dpi" = 91;
+      "Xft/lcdfilter" = "lcddefault";
+      "Gtk/MonospaceFontName" = "JetBrainsMono Nerd Font 10";
+      "Gtk/FontName" = "Noto Sans Display 10";
+    };
+  };
 }

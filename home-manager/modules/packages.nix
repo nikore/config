@@ -31,7 +31,6 @@
     minio-client
     mtr
     nodejs
-    nodePackages.npm
     pass
     ripgrep
     rustup
@@ -45,12 +44,21 @@
     zsh
     zx
     #fonts
-    noto-fonts-color-emoji
-    google-fonts
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
+    noto-fonts-extra
     ubuntu_font_family
+    corefonts
+    google-fonts
+    ucs-fonts
     nerd-fonts.ubuntu
     nerd-fonts.ubuntu-mono
     nerd-fonts.jetbrains-mono
-    nerd-fonts.caskaydia-cove
+    nerd-fonts.roboto-mono
+    roboto-slab
+    roboto-serif
+    roboto
+    font-awesome
   ];
 }
