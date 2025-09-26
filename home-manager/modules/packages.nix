@@ -30,6 +30,7 @@
     lua
     minio-client
     mtr
+    mutt
     nodejs
     pass
     ripgrep

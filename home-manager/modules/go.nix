@@ -4,6 +4,10 @@
   programs.go = {
     enable = true;
 
-    goPath = "projects/go";
+    env = {
+      GOPATH = [
+        "${config.home.homeDirectory}/projects/go"
+      ];
+    };
   };
 }
