@@ -21,6 +21,7 @@
     (config.lib.nixGL.wrap slack)
     (config.lib.nixGL.wrap spotify)
     spotifyd
+    (config.lib.nixGL.wrap flameshot)
     (config.lib.nixGL.wrap standardnotes)
     (config.lib.nixGL.wrap vlc)
     (config.lib.nixGL.wrap zoom-us)

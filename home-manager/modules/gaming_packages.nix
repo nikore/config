@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     (config.lib.nixGL.wrap bottles)
+    gamemode
     (config.lib.nixGL.wrap heroic)
     (config.lib.nixGL.wrap lutris)
     (config.lib.nixGL.wrap mangohud)

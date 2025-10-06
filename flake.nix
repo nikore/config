@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixGL = {
-      url = "github:nix-community/nixGL";
+      url = "github:nikore/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser = {
