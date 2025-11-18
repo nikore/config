@@ -76,6 +76,7 @@
             { home = { username = builtins.getEnv "USER"; }; }
             ./home-manager/home.nix
             ./home-manager/laptop.nix
+            catppuccin.homeModule.catppuccin
           ];
         };
 
@@ -86,6 +87,7 @@
           modules = [
             { home = { username = builtins.getEnv "USER"; }; }
             ./home-manager/home.nix
+            catppuccin.homeModule.catppuccin
           ];
         };
       };
