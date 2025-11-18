@@ -1,13 +1,11 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
     _1password-cli
     bat
-    bazelisk
     bottom
-    docker-client
-    curl
+    btop
     fastfetch
     fd
     fzf
@@ -27,11 +25,9 @@
     kubernetes-helm
     lazygit
     lazydocker
-    lua
     minio-client
     mtr
     mutt
-    nodejs
     pass
     ripgrep
     rustup
@@ -39,27 +35,11 @@
     tmate
     tmux
     tmuxinator
-    wget
     xdg-utils
     yq-go
+    yazi
+    zoxide
     zsh
     zx
-    #fonts
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
-    noto-fonts-extra
-    ubuntu_font_family
-    corefonts
-    google-fonts
-    ucs-fonts
-    nerd-fonts.ubuntu
-    nerd-fonts.ubuntu-mono
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.roboto-mono
-    roboto-slab
-    roboto-serif
-    roboto
-    font-awesome
   ];
 }

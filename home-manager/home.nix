@@ -32,6 +32,8 @@ in
     ./modules/git.nix
     ./modules/gh.nix
     ./modules/go.nix
+    ./modules/nodejs.nix
+    ./modules/zig.nix
     ./modules/zsh.nix
     ./modules/starship.nix
     ./modules/fzf.nix

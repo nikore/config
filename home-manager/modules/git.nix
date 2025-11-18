@@ -1,16 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  programs.git = {
-    enable = true;
-    
-    userName = "Matt Christiansen";
-    userEmail = "matt@nikore.net";
-
+  programs = {
     delta = {
       enable = true;
       options = {
-        features = "side-by-side line-number decorations";
         line-number = "relative";
         navigate = "true";
         decorations = "commit-decoration file-style";
@@ -19,102 +13,92 @@
       };
     };
 
-    extraConfig = {
-      merge = {
-        conflictstyle = "diff3";
-      };
+    git = {
+      enable = true;
 
-      diff = {
-        colorMoved = "default";
-      };
+      settings = {
+        user = {
+          name = "Matt Christiansen";
+          email = "matt@nikore.net";
+        };
 
-      push = {
-        default = "simple";
-        autoSetupRemote = true;
-        followTags = true;
-      };
+        alias = {
+          a = "add";
+          c = "commit";
+          p = "push";
+          d = "diff";
+          graph =
+            "log --graph --color --pretty=format:'%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n'";
+          one = "log --oneline --all";
+          stat = "status -sb";
+          last = "show -1";
+          unstage = "reset HEAD --";
+          cached = "diff --cached";
+          ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi";
+        };
 
-      fetch = {
-        prune = true;
-        pruneTags = true;
-        all = true;
-      };
+        merge = { conflictstyle = "diff3"; };
 
-      color = {
-        ui = true;
-      };
+        diff = { colorMoved = "default"; };
 
-      column = {
-        ui = "auto";
-      };
+        push = {
+          default = "simple";
+          autoSetupRemote = true;
+          followTags = true;
+        };
 
-      branch = {
-        sort = "-committerdate";
-      };
+        fetch = {
+          prune = true;
+          pruneTags = true;
+          all = true;
+        };
 
-      tag = {
-        sort = "version:refname";
-      };
+        color = { ui = true; };
 
-      submodule = {
-        recurse = "true";
-      };
+        column = { ui = "auto"; };
 
-      pull = {
-        ff = "only";
-      };
+        branch = { sort = "-committerdate"; };
 
-      init = {
-        algorithm = "histogram";
-        colorMoved = "plain";
-        mnemonicPrefix = true;
-        renames = true;
-        defaultBranch = "main";
-      };
+        tag = { sort = "version:refname"; };
 
-      help = {
-        autocorrect = "prompt";
-      };
+        submodule = { recurse = "true"; };
 
-      commit = {
-        verbose = true;
-      };
+        pull = { ff = "only"; };
 
-      rerere = {
-        enabled = true;
-        autoupdate = true;
-      };
+        init = {
+          algorithm = "histogram";
+          colorMoved = "plain";
+          mnemonicPrefix = true;
+          renames = true;
+          defaultBranch = "main";
+        };
 
-      core = {
-        excludesfile = "~/.gitignore";
-        fsmonitor = true;
-        untrackedCache = true;
-      };
+        help = { autocorrect = "prompt"; };
 
-      rebase = {
-        autoSquash = true;
-        autoStash = true;
-        updateRefs = true;
+        commit = { verbose = true; };
+
+        rerere = {
+          enabled = true;
+          autoupdate = true;
+        };
+
+        core = {
+          excludesfile = "~/.gitignore";
+          fsmonitor = true;
+          untrackedCache = true;
+        };
+
+        rebase = {
+          autoSquash = true;
+          autoStash = true;
+          updateRefs = true;
+        };
       };
     };
 
-    aliases = {
-      a = "add";
-      c = "commit";
-      p = "push";
-      d = "diff";
-      graph = "log --graph --color --pretty=format:'%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n'";
-      one = "log --oneline --all";
-      stat = "status -sb";
-      last = "show -1";
-      unstage = "reset HEAD --";
-      cached = "diff --cached";
-      ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi";
+    gh = {
+      enable = true;
+      settings.git_protocol = "ssh";
     };
-  };
-
-  programs.gh = {
-    enable = true;
-    settings.git_protocol = "ssh";
   };
 }

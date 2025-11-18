@@ -18,8 +18,7 @@
       hm = "home-manager";
       lg = "lazygit";
       k = "kubectl";
-      b = "bazelisk";
-      bazel = "bazelisk";
+      b = "bazel";
     };
 
     initContent = lib.mkMerge [

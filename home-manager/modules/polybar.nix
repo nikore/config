@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 let
   macchiato = {
     rosewater = "#f4dbd6";
@@ -47,7 +47,7 @@ in
         screenchange-reload = true;
         pseudo-transparency = true;
       };
-        
+
       "global/wm" = {
         margin-top = 0;
         margin-bottom = 0;
@@ -75,7 +75,7 @@ in
         font-5 = "Noto Sans Bengali:size=11:weight=bold;1";
         font-6 = "Noto Sans JP:size=11:weight=bold;1";
         font-7 = "Noto Sans Arabic:size=11:weight=bold;1";
-        modules-left = "rofi i3 xwindow"; 
+        modules-left = "rofi i3 xwindow";
         modules-center = "time";
         modules-right = "filesystem cpu temp memory pulseaudio tray";
         cursor-click = "pointer";
@@ -120,12 +120,12 @@ in
         label-focused = "%icon%";
         label-focused-font = 5;
         label-focused-foreground = "${macchiato.mauve}";
-        label-focused-background= "${macchiato.base}";
+        label-focused-background = "${macchiato.base}";
         label-focused-padding = 2;
         label-unfocused = "%icon%";
         label-unfocused-font = 5;
         label-unfocused-foreground = "${macchiato.text}";
-        label-unfocused-background= "${macchiato.base}";
+        label-unfocused-background = "${macchiato.base}";
         label-unfocused-padding = 2;
         label-visible = "%icon%";
         label-visible-padding = 2;
@@ -172,11 +172,11 @@ in
         mount-0 = "/";
         format-mounted-prefix = "      ";
         format-mounted-prefix-foreground = "${macchiato.red}";
-        format-mounted-prefix-background= "${macchiato.base}";
+        format-mounted-prefix-background = "${macchiato.base}";
         label-mounted = "%free%";
         label-unmounted = "%mountpoint% not mounted";
         label-mounted-foreground = "${macchiato.text}";
-        label-mounted-background= "${macchiato.base}";
+        label-mounted-background = "${macchiato.base}";
         label-mounted-padding-left = 2;
         label-mounted-padding-right = 2;
       };
@@ -186,10 +186,10 @@ in
         interval = 1;
         format-prefix = "      ";
         format-prefix-foreground = "${macchiato.peach}";
-        format-prefix-background= "${macchiato.base}";
+        format-prefix-background = "${macchiato.base}";
         label = "%percentage%%";
         label-foreground = "${macchiato.text}";
-        label-background= "${macchiato.base}";
+        label-background = "${macchiato.base}";
         label-padding-left = 2;
         label-padding-right = 2;
       };
@@ -204,11 +204,11 @@ in
         units = true;
         format = "<label>";
         format-prefix = "        ";
-        format-prefix-foreground= "${macchiato.yellow}";
-        format-prefix-background= "${macchiato.base}";
+        format-prefix-foreground = "${macchiato.yellow}";
+        format-prefix-background = "${macchiato.base}";
         label = "%temperature-c%";
         label-foreground = "${macchiato.text}";
-        label-background= "${macchiato.base}";
+        label-background = "${macchiato.base}";
         label-padding-left = 2;
         label-padding-right = 2;
         format-warn-prefix = "        ";
@@ -226,23 +226,23 @@ in
         interval = 1;
         format-prefix = "      ";
         format-prefix-foreground = "${macchiato.blue}";
-        format-prefix-background= "${macchiato.base}";
+        format-prefix-background = "${macchiato.base}";
         label = "%mb_used%";
         label-foreground = "${macchiato.text}";
-        label-background= "${macchiato.base}";
-        label-padding-left=2;
-        label-padding-right=2;
+        label-background = "${macchiato.base}";
+        label-padding-left = 2;
+        label-padding-right = 2;
       };
 
       "module/pulseaudio" = {
         type = "internal/pulseaudio";
         format-volume-prefix = "     ";
         format-volume-prefix-foreground = "${macchiato.blue}";
-        format-volume-prefix-background= "${macchiato.base}";
+        format-volume-prefix-background = "${macchiato.base}";
         format-volume = "<label-volume>";
         label-volume = "%percentage%%";
-        label-volume-foreground= "${macchiato.text}";
-        label-volume-background= "${macchiato.base}";
+        label-volume-foreground = "${macchiato.text}";
+        label-volume-background = "${macchiato.base}";
         label-volume-padding-left = 2;
         label-volume-padding-right = 2;
         format-muted-prefix = "  󰝟   ";
@@ -260,9 +260,9 @@ in
         format-prefix = " 󱊖   ";
         format-prefix-foreground = "${macchiato.sky}";
         format-prefix-background = "${macchiato.base}";
-        tray-spacing= "8px";
-        format-padding="5px";
-        format-background="${macchiato.base}";
+        tray-spacing = "8px";
+        format-padding = "5px";
+        format-background = "${macchiato.base}";
         tray-background = "${macchiato.base}";
       };
 
@@ -280,14 +280,14 @@ in
         label-charging = "%percentage%%";
         label-charging-foreground = "${macchiato.text}";
         label-charging-background = "${macchiato.base}";
-        label-charging-padding= 2;
+        label-charging-padding = 2;
         format-discharging = "<ramp-capacity><label-discharging>";
         format-discharging-foreground = "${macchiato.teal}";
         format-discharging-background = "${macchiato.base}";
         label-discharging = "%percentage%%";
         label-discharging-foreground = "${macchiato.text}";
         label-discharging-background = "${macchiato.base}";
-        label-discharging-padding= 2;
+        label-discharging-padding = 2;
         format-full-prefix = "      ";
         format-full-foreground = "${macchiato.sapphire}";
         format-full-background = "${macchiato.base}";
@@ -299,11 +299,11 @@ in
         label-low-foreground = "${macchiato.base}";
         label-low-background = "${macchiato.red}";
         label-low-padding = 2;
-        ramp-capacity-0 ="     ";
-        ramp-capacity-1 ="     ";
-        ramp-capacity-2 ="     ";
-        ramp-capacity-3 ="     ";
-        ramp-capacity-4 ="     ";
+        ramp-capacity-0 = "     ";
+        ramp-capacity-1 = "     ";
+        ramp-capacity-2 = "     ";
+        ramp-capacity-3 = "     ";
+        ramp-capacity-4 = "     ";
         ramp-capacity-0-padding = 3;
         ramp-capacity-1-padding = 3;
         ramp-capacity-2-padding = 3;
@@ -320,11 +320,11 @@ in
         ramp-capacity-3-background = "${macchiato.base}";
         ramp-capacity-4-background = "${macchiato.base}";
         bar-capacity-width = 10;
-        animation-charging-0 ="     ";
-        animation-charging-1 ="     ";
-        animation-charging-2 ="     ";
-        animation-charging-3 ="     ";
-        animation-charging-4 ="     ";
+        animation-charging-0 = "     ";
+        animation-charging-1 = "     ";
+        animation-charging-2 = "     ";
+        animation-charging-3 = "     ";
+        animation-charging-4 = "     ";
         animation-charging-framerate = 750;
       };
 

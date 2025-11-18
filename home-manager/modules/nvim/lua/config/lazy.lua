@@ -35,3 +35,9 @@ require("lazy").setup({
   },
   checker = { enabled = true },
 })
+
+require("fzf-lua").setup({
+  winopts = {
+    preview = { default = "bat" },
+  },
+})
