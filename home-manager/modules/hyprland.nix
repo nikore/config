@@ -24,12 +24,14 @@
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "systemctl --user start hyprpolkitagent"
+        "jetbrains-toolbox --minimize"
+        "xrandr --output DP-2 --primary"
       ];
       monitor = [
         "DP-1, 1920x1080@164.92, 4480x0, 1"
         "DP-2, 2560x1440@180.00, 1920x0, 1"
         "DP-3, 1920x1080@164.92, 0x0, 1"
-        "HDMI-A-1, 1920x1080@60.00, 1920x1440, 1"
+        "HDMI-A-1, 1920x1080@60.00, 0x1080, 1"
       ];
       workspace = [
         "1,monitor:DP-2"
@@ -86,21 +88,16 @@
           workspace = 5;
         }
         {
+          name = "steam-game-workspace";
+          "match:title" = "(steam.*)";
+          workspace = 5;
+        }
+        {
           name = "chrome-workspace";
           "match:title" = "(.*Google Chrome)";
           workspace = 6;
         }
       ];
-      #      windowrule = [
-      #        "workspace 1,class:(.*ghostty)"
-      #        "workspace 2,class:(.*discord)"
-      #        "workspace 2,title:(.*Slack)"
-      #        "workspace 3,class:(.*zen-twilight)"
-      #        "workspace 3,title:(.*Brave)"
-      #        "workspace 4,class:(.*Spotify)"
-      #        "workspace 5,class:(steam)"
-      #        "workspace 6,title:(.*Google Chrome)"
-      #      ];
       decoration = {
         rounding = 8;
         active_opacity = 1.0;
@@ -151,10 +148,14 @@
         "$mod, space, exec, rofi -show run"
         "$mod, n, exec, thunar"
         "$mod, F, fullscreen"
-        "$mod, l, movewindow,r"
-        "$mod, h, movewindow,l"
-        "$mod, k, movewindow,u"
-        "$mod, j, movewindow,d"
+        "$mod SHIFT, l, movewindow,r"
+        "$mod SHIFT, h, movewindow,l"
+        "$mod SHIFT, k, movewindow,u"
+        "$mod SHIFT, j, movewindow,d"
+        "$mod, l, swapwindow,r"
+        "$mod, h, swapwindow,l"
+        "$mod, k, swapwindow,u"
+        "$mod, j, swapwindow,d"
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
         "$mod, 3, workspace, 3"

@@ -38,12 +38,16 @@
     cpu.amd.updateMicrocode = true;
     i2c.enable = true;
     keyboard.zsa.enable = true;
-    graphics.enable = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
     nvidia = {
       modesetting.enable = true;
       powerManagement.enable = true;
       open = true;
       nvidiaSettings = true;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
   };
 }

@@ -18,14 +18,14 @@
 
   home.packages = with pkgs; [
     python313Packages.python-lsp-server
-    nodePackages_latest.nodemon
-    nodePackages_latest.typescript
-    nodePackages_latest.typescript-language-server
+    nodePackages.nodemon
+    nodePackages.typescript
+    nodePackages.typescript-language-server
     eslint
-    nodePackages_latest.vscode-langservers-extracted
-    nodePackages_latest.yaml-language-server
-    nodePackages_latest.bash-language-server
-    nodePackages_latest.graphql-language-service-cli
+    nodePackages.vscode-langservers-extracted
+    nodePackages.yaml-language-server
+    nodePackages.bash-language-server
+    nodePackages.graphql-language-service-cli
     dockerfile-language-server
     vue-language-server
     lua-language-server

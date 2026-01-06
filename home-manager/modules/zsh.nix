@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config, ... }:
 
 {
   programs.zsh = {
@@ -6,6 +6,7 @@
     enableCompletion = true;
     autosuggestion.enable = false;
     syntaxHighlighting.enable = true;
+    dotDir = config.home.homeDirectory;
 
     history = {
       extended = true;

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   virtualisation.podman = {
     enable = true;
 
@@ -18,5 +17,7 @@
     podman-compose
     podman-tui
     docker-compose
+    qemu
+    distrobox
   ];
 }

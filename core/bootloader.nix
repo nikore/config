@@ -1,11 +1,7 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    supportedFilesystems = [
-      "ntfs"
-      "xfs"
-    ];
+    supportedFilesystems = [ "ntfs" "xfs" ];
     consoleLogLevel = 3;
     loader = {
       systemd-boot.enable = true;
@@ -19,6 +15,10 @@
     tmp = {
       useTmpfs = true;
       tmpfsSize = "16%";
+    };
+    binfmt = {
+      emulatedSystems = [ "aarch64-linux" "armv7l-linux" ];
+      preferStaticEmulators = true;
     };
   };
 }

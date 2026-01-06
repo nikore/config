@@ -17,6 +17,9 @@
     dool
     nvme-cli
     nvtopPackages.full
+    dnsutils
+    inxi
+    xrandr
   ];
 
   programs.fuse = {

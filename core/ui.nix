@@ -29,13 +29,13 @@
     wl-clipboard
     wlogout
     networkmanagerapplet
-    xfce.thunar
     ffmpeg-headless
     ffmpegthumbnailer
     gdk-pixbuf
     libheif
     libheif.out
-    xfce.tumbler
+    thunar
+    tumbler
     dunst
   ];
 

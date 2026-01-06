@@ -1,11 +1,13 @@
 { config, pkgs, ... }:
 
-let 
-  wallpaperPath = "~/Pictures/Backgrounds/lost-in-space.png";
-in
-{
+let wallpaperPath = "~/Pictures/Backgrounds/lost-in-space.png";
+in {
   xdg.configFile."hypr/hyprpaper.conf".text = ''
-    preload = ${wallpaperPath}
-    wallpaper = ,${wallpaperPath}
+    wallpaper {
+        monitor = 
+        path = ${wallpaperPath}
+        fit_mode = cover
+        splash = false
+      }
   '';
 }
