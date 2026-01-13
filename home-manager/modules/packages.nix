@@ -3,19 +3,27 @@
 {
   home.packages = with pkgs; [
     _1password-cli
+    asciinema
+    atac
     bat
     bottom
+    bluetui
     btop
+    ctop
+    dive
+    doggo
     fastfetch
     fd
     fzf
     git-extras
     git-lfs
     glibcLocales
+    gping
     grpcurl
     go-jira
     helmfile
     htop
+    impala
     jq
     k9s
     kind
@@ -25,21 +33,24 @@
     kubernetes-helm
     lazygit
     lazydocker
+    lynx
+    ncdu
     minio-client
     mtr
     mutt
     pass
     ripgrep
     rustup
+    speedtest-cli
     spotify-player
     tmate
     tmux
     tmuxinator
+    wiremix
     xdg-utils
     yq-go
     yazi
     zoxide
     zsh
-    zx
   ];
 }

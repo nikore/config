@@ -1,11 +1,11 @@
 { inputs, pkgs, lib, host, ... }: {
   wayland.windowManager.hyprland = {
     enable = true;
-    xwayland.enable = true;
     package = null;
     portalPackage = null;
     systemd.enable = false;
     settings = {
+      xwayland.enabled = true;
       general = {
         gaps_in = 5;
         gaps_out = 10;
