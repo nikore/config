@@ -12,7 +12,7 @@
     (config.lib.nixGL.wrap obs-studio)
     (config.lib.nixGL.wrap plexamp)
     (config.lib.nixGL.wrap plex-desktop)
-    #    (config.lib.nixGL.wrap protonvpn-gui)
+    (config.lib.nixGL.wrap protonvpn-gui)
     (config.lib.nixGL.wrap proton-authenticator)
     (config.lib.nixGL.wrap protonmail-desktop)
     (config.lib.nixGL.wrap signal-desktop)

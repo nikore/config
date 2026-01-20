@@ -14,7 +14,6 @@
       DisableFirefoxStudies = true;
       DisablePocket = true; # save webs for later reading
       DisableTelemetry = true;
-      DontCheckDefaultBrowser = true;
       NoDefaultBookmarks = true;
       OfferToSaveLogins = false;
 

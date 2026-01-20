@@ -26,6 +26,7 @@
         "systemctl --user start hyprpolkitagent"
         "jetbrains-toolbox --minimize"
         "xrandr --output DP-2 --primary"
+        "dropbox start"
       ];
       monitor = [
         "DP-1, 1920x1080@164.92, 4480x0, 1"

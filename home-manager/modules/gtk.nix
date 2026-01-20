@@ -4,13 +4,11 @@
     flavor = "macchiato";
     accent = "blue";
     waybar.enable = false;
+    cursors.enable = true;
+    cache.enable = true;
   };
   gtk = {
     enable = true;
-    cursorTheme = {
-      name = "Dracula-cursors";
-      package = pkgs.dracula-theme;
-    };
     theme = {
       name = "catppuccin-macchiato-blue-compact";
       package = pkgs.catppuccin-gtk.override {

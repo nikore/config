@@ -9,6 +9,10 @@
     # Required for containers under podman-compose to be able to talk to each other.
     defaultNetwork.settings.dns_enabled = true;
   };
+  virtualisation.oci-containers = {
+    backend = "podman";
+    containers = { };
+  };
   environment.variables.DBX_CONTAINER_MANAGER = "podman";
   users.extraGroups.podman.members = [ "matt" ];
 
@@ -19,5 +23,12 @@
     docker-compose
     qemu
     distrobox
+    distrobox-tui
+    crun
+    runc
+    conmon
+    skopeo
+    slirp4netns
+    fuse-overlayfs
   ];
 }
