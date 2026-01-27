@@ -5,10 +5,10 @@
     enable = true;
     settings = {
       git = {
-        paging = {
+        pagers = [{
           colorArg = "always";
           pager = "delta --dark --paging=never --line-numbers";
-        };
+        }];
       };
     };
   };

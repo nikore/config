@@ -50,8 +50,8 @@
           workspace.symbol.search.kind = "all_symbols";
         };
         vim = { useSystemClipboard = true; };
-        extensions.ignoreRecommendations = true;
         vs-kubernetes.crd-code-completion = "enabled";
+        remote.SSH.connectTimeout = 60;
       };
       keybindings = [
         {

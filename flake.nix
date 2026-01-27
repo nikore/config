@@ -27,10 +27,26 @@
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dsearch = {
+      url = "github:AvengeMedia/danksearch";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dms-plugin-registry = {
+      url = "github:AvengeMedia/dms-plugin-registry";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, nixGL, home-manager, zen-browser, hyprland
-    , catppuccin, ... }:
+    , catppuccin, dms, dgop, dms-plugin-registry, ... }:
     let
       pkgs = import nixpkgs {
         system = "x86_64-linux";
@@ -61,6 +77,8 @@
           ./core/yubikey.nix
           catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
+          dms.nixosModules.dank-material-shell
+          dms-plugin-registry.modules.default
           {
             home-manager = {
               useGlobalPkgs = true;
@@ -71,6 +89,8 @@
                 ./home-manager/home.nix
                 ./home-manager/desktop.nix
                 catppuccin.homeModules.catppuccin
+                dms.homeModules.dank-material-shell
+                dms-plugin-registry.modules.default
               ];
             };
           }

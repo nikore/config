@@ -3,9 +3,9 @@
     enable = true;
     flavor = "macchiato";
     accent = "blue";
-    waybar.enable = false;
     cursors.enable = true;
-    cache.enable = true;
+    qt5ct.enable = true;
+    firefox.force = true;
   };
   gtk = {
     enable = true;
@@ -29,7 +29,7 @@
   };
   qt = {
     enable = true;
-    platformTheme.name = "qt6ct";
+    platformTheme.name = "qtct";
     style.name = "kvantum";
   };
 

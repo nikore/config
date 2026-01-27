@@ -16,13 +16,7 @@
         layout = "dwindle";
       };
       exec-once = [
-        "hyprpaper"
-        "waybar"
-        "dunst"
         "1password --silent"
-        "nm-applet --indicator"
-        "wl-paste --type text --watch cliphist store"
-        "wl-paste --type image --watch cliphist store"
         "systemctl --user start hyprpolkitagent"
         "jetbrains-toolbox --minimize"
         "xrandr --output DP-2 --primary"
@@ -146,7 +140,8 @@
       "$mod" = "SUPER";
       bind = [
         "$mod, return, exec, ghostty"
-        "$mod, space, exec, rofi -show run"
+        "$mod, space, exec, dms ipc call spotlight toggle"
+        "$mod, s, exec, dms screenshot --no-file"
         "$mod, n, exec, thunar"
         "$mod, F, fullscreen"
         "$mod SHIFT, l, movewindow,r"
@@ -166,7 +161,7 @@
         "$mod, 7, workspace, 7"
         "$mod, 8, workspace, 8"
         "$mod, 9, workspace, 9"
-        "$mod, V, exec, cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"
+        "$mod, v, exec, dms ipc call clipboard toggle"
         "$mod SHIFT, 1, movetoworkspace, 1"
         "$mod SHIFT, 2, movetoworkspace, 2"
         "$mod SHIFT, 3, movetoworkspace, 3"
@@ -182,6 +177,8 @@
         "$mod SHIFT, h, movefocus, l"
         "$mod SHIFT, k, movefocus, u"
         "$mod SHIFT, j, movefocus, d"
+        "$mod SHIFT, z, exec, dms ipc call lock lock"
+        "$mod CTRL, s, exec, dms ipc call settings toggle"
         "$mod CTRL, q, exit"
         "ALT, Tab, cyclenext"
       ];

@@ -8,7 +8,7 @@
     dconf
     (config.lib.nixGL.wrap filezilla)
     (config.lib.nixGL.wrap gimp)
-    (config.lib.nixGL.wrap handbrake)
+    #(config.lib.nixGL.wrap handbrake)
     (config.lib.nixGL.wrap obs-studio)
     (config.lib.nixGL.wrap plexamp)
     (config.lib.nixGL.wrap plex-desktop)

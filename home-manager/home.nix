@@ -1,12 +1,10 @@
 { pkgs, config, ... }:
-let
-  locale = "en_US.UTF-8";
-in 
-{
+let locale = "en_US.UTF-8";
+in {
   home = {
     stateVersion = "25.05";
 
-    homeDirectory = "/home/${config.home.username}"; 
+    homeDirectory = "/home/${config.home.username}";
 
     sessionVariables = {
       LANG = locale;
@@ -17,7 +15,7 @@ in
     };
   };
 
-  xresources.properties = { 
+  xresources.properties = {
     "Xft.dpi" = 91;
     "Xft.antialias" = 1;
     "Xft.hinting" = 1;
@@ -41,6 +39,12 @@ in
     ./modules/lazygit.nix
     ./modules/neovim.nix
     ./modules/fonts.nix
+    ./modules/yazi.nix
+    ./modules/bat.nix
+    ./modules/bottom.nix
+    ./modules/btop.nix
+    ./modules/k9s.nix
+    ./modules/opencode.nix
   ];
 
   programs.home-manager.enable = true;

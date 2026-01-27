@@ -20,6 +20,7 @@
     dnsutils
     inxi
     xrandr
+    i2c-tools
   ];
 
   programs.fuse = {

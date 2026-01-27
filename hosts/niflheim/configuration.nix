@@ -1,29 +1,29 @@
-{
-  ...
-}:
-{
-  imports = [
-    ./hardware-configuration.nix
-  ];
+{ ... }: {
+  imports = [ ./hardware-configuration.nix ];
 
   networking = {
     hostName = "niflheim";
     domain = "nikore.net";
-    defaultGateway = "192.168.68.1";
-    nameservers = [
-      "10.10.0.2"
-      "10.10.0.3"
-    ];
-    interfaces = {
-      enp12s0.ipv4.addresses = [
-        {
-          address = "192.168.68.5";
-          prefixLength = 24;
-        }
-      ];
-    };
+    nameservers = [ "10.10.0.2" "10.10.0.3" ];
     networkmanager = {
       enable = true;
+      ensureProfiles = {
+        profiles = {
+          "Wired Connnection 1" = {
+            connection = {
+              type = "ethernet";
+              id = "Wired Connection 1";
+              interface-name = "enp12s0";
+              autoconnect = true;
+            };
+            ipv4 = {
+              method = "manual";
+              address = "192.168.68.5/24";
+              gateway = "192.168.68.1";
+            };
+          };
+        };
+      };
     };
   };
 

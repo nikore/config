@@ -5,16 +5,12 @@
     _1password-cli
     asciinema
     atac
-    bat
-    bottom
     bluetui
-    btop
     ctop
     dive
     doggo
     fastfetch
     fd
-    fzf
     git-extras
     git-lfs
     glibcLocales
@@ -25,19 +21,16 @@
     htop
     impala
     jq
-    k9s
     kind
     krew
     kubectl
     kubectx
     kubernetes-helm
-    lazygit
     lazydocker
     lynx
     ncdu
     minio-client
     mtr
-    mutt
     pass
     ripgrep
     rustup
@@ -49,7 +42,6 @@
     wiremix
     xdg-utils
     yq-go
-    yazi
     zoxide
     zsh
   ];

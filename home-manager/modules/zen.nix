@@ -132,7 +132,7 @@
       };
 
       userChrome = (builtins.readFile ./zen/userChrome.css);
-      userContent = (builtins.readFile ./zen/userContent.css);
+      #userContent = (builtins.readFile ./zen/userContent.css);
 
       settings = {
         # Privacy settings
