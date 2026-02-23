@@ -75,6 +75,7 @@
           ./core/audio.nix
           ./core/display-manager.nix
           ./core/yubikey.nix
+          ./core/printing.nix
           catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
           dms.nixosModules.dank-material-shell

@@ -7,15 +7,11 @@
       xwayland.enable = true;
       withUWSM = true;
       package =
-        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland.overrideAttrs {
-          patches = [ ../temp_fix_hyprland.patch ];
-        };
+        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       portalPackage =
         inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland.override {
           hyprland =
-            inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default.overrideAttrs {
-              patches = [ ../temp_fix_hyprland.patch ];
-            };
+            inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
         };
     };
   };

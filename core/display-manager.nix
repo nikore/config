@@ -31,7 +31,7 @@
     settings = {
       default_session = {
         command =
-          "${pkgs.tuigreet}/bin/tuigreet --width '180' --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd '${pkgs.uwsm}/bin/uwsm start hyprland.desktop'";
+          "${pkgs.tuigreet}/bin/tuigreet --width '180' --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd '${pkgs.uwsm}/bin/uwsm start ${inputs.hyprland.packages.x86_64-linux.hyprland}/share/wayland-sessions/hyprland.desktop'";
         user = "greeter";
       };
     };

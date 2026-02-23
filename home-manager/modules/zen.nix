@@ -158,7 +158,7 @@
 
         # Browser startup settings
         "browser.shell.checkDefaultBrowser" =
-          false; # Don't check if default browser
+          true; # Don't check if default browser
 
         # Tab settings
         "browser.tabs.allow_transparent_browser" =

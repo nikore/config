@@ -34,7 +34,7 @@
     nil
     nixfmt
     nixpkgs-fmt
-    zls
+    #zls
     gopls
     delve
     emmet-language-server
@@ -45,7 +45,6 @@
     slint-lsp
     terraform-ls
     hyprls
-    helix-gpt
     taplo
     tree-sitter
     statix
