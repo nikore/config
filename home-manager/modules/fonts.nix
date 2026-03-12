@@ -8,7 +8,10 @@
         serif = [ "Noto Serif Display" ];
         sansSerif = [ "Noto Sans Display" ];
         monospace = [ "JetBrainsMono Nerd Font" ];
-        emoji = [ "Noto Color Emoji" "Noto Emoji" ];
+        emoji = [
+          "Noto Color Emoji"
+          "Noto Emoji"
+        ];
       };
     };
   };
@@ -19,9 +22,6 @@
     noto-fonts-color-emoji
     noto-fonts
     roboto
-    roboto-slab
-    roboto-mono
-    roboto-serif
     corefonts
     google-fonts
     vista-fonts

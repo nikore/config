@@ -1,4 +1,5 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
     vim
     wget
@@ -21,6 +22,7 @@
     inxi
     xrandr
     i2c-tools
+    sbctl
   ];
 
   programs.fuse = {

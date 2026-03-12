@@ -43,10 +43,27 @@
       url = "github:AvengeMedia/dms-plugin-registry";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
+    nixpkgs-patch-493590 = {
+      url = "https://github.com/NixOS/nixpkgs/pull/493590.patch";
+      flake = false;
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixGL, home-manager, zen-browser, hyprland
-    , catppuccin, dms, dgop, dms-plugin-registry, ... }:
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      nixGL,
+      home-manager,
+      zen-browser,
+      hyprland,
+      catppuccin,
+      dms,
+      dgop,
+      dms-plugin-registry,
+      ...
+    }:
     let
       pkgs = import nixpkgs {
         system = "x86_64-linux";
@@ -56,7 +73,8 @@
         };
         overlays = [ inputs.nur.overlays.default ];
       };
-    in {
+    in
+    {
       nixosConfigurations.niflheim = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
@@ -103,7 +121,11 @@
           extraSpecialArgs = { inherit inputs; };
 
           modules = [
-            { home = { username = builtins.getEnv "USER"; }; }
+            {
+              home = {
+                username = builtins.getEnv "USER";
+              };
+            }
             ./home-manager/home.nix
             ./home-manager/laptop.nix
             catppuccin.homeModules.catppuccin
@@ -115,7 +137,11 @@
           extraSpecialArgs = { inherit inputs; };
 
           modules = [
-            { home = { username = builtins.getEnv "USER"; }; }
+            {
+              home = {
+                username = builtins.getEnv "USER";
+              };
+            }
             ./home-manager/home.nix
             catppuccin.homeModules.catppuccin
           ];
