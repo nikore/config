@@ -43,6 +43,10 @@
       url = "github:AvengeMedia/dms-plugin-registry";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    opencode = {
+      url = "github:anomalyco/opencode";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
     nixpkgs-patch-493590 = {
       url = "https://github.com/NixOS/nixpkgs/pull/493590.patch";
@@ -62,6 +66,7 @@
       dms,
       dgop,
       dms-plugin-registry,
+      opencode,
       ...
     }:
     let

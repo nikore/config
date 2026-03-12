@@ -1,4 +1,11 @@
-{ inputs, pkgs, lib, host, ... }: {
+{
+  inputs,
+  pkgs,
+  lib,
+  host,
+  ...
+}:
+{
   imports = [ inputs.hyprland.nixosModules.default ];
 
   programs = {
@@ -6,13 +13,12 @@
       enable = true;
       xwayland.enable = true;
       withUWSM = true;
-      package =
-        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       portalPackage =
-        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland.override {
-          hyprland =
-            inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
-        };
+        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland.override
+          {
+            hyprland = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
+          };
     };
   };
 
