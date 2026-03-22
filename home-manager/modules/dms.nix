@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   programs.dank-material-shell = {
     enable = true;
     managePluginSettings = true;
@@ -6,7 +7,9 @@
     plugins = {
       mediaPlayer = {
         enable = true;
-        settings = { preferredSource = "spotify"; };
+        settings = {
+          preferredSource = "spotify";
+        };
       };
       calculator.enable = true;
       commandRunner.enable = true;
@@ -19,8 +22,7 @@
     settings = {
       currentThemeName = "custom";
       currentThemeCategory = "registry";
-      customThemeFile =
-        "${config.home.homeDirectory}/.config/DankMaterialShell/themes/catppuccin/theme.json";
+      customThemeFile = "${config.home.homeDirectory}/.config/DankMaterialShell/themes/catppuccin/theme.json";
       registryThemeVariants = {
         catppuccin = {
           accent = "blue";
@@ -178,7 +180,9 @@
       vpnLastConnected = "";
       iconTheme = "System Default";
       cursorSettings = {
-        dwl = { cursorHideTimeout = 0; };
+        dwl = {
+          cursorHideTimeout = 0;
+        };
         hyprland = {
           hideOnKeyPress = false;
           hideOnTouch = false;
@@ -313,8 +317,14 @@
       osdAudioOutputEnabled = true;
       powerActionConfirm = true;
       powerActionHoldDuration = 0.5;
-      powerMenuActions =
-        [ "reboot" "logout" "poweroff" "lock" "suspend" "restart" ];
+      powerMenuActions = [
+        "reboot"
+        "logout"
+        "poweroff"
+        "lock"
+        "suspend"
+        "restart"
+      ];
       powerMenuDefaultAction = "logout";
       powerMenuGridLayout = false;
       customPowerActionLock = "";
@@ -329,26 +339,36 @@
       updaterTerminalAdditionalParams = "";
       displayNameMode = "system";
       screenPreferences = {
-        dock = [{
-          model = "G274QPF E2";
-          name = "DP-2";
-        }];
-        notepad = [{
-          model = "G274QPF E2";
-          name = "DP-2";
-        }];
-        notifications = [{
-          model = "G274QPF E2";
-          name = "DP-2";
-        }];
-        osd = [{
-          model = "G274QPF E2";
-          name = "DP-2";
-        }];
-        toast = [{
-          model = "G274QPF E2";
-          name = "DP-2";
-        }];
+        dock = [
+          {
+            model = "G274QPF E2";
+            name = "DP-2";
+          }
+        ];
+        notepad = [
+          {
+            model = "G274QPF E2";
+            name = "DP-2";
+          }
+        ];
+        notifications = [
+          {
+            model = "G274QPF E2";
+            name = "DP-2";
+          }
+        ];
+        osd = [
+          {
+            model = "G274QPF E2";
+            name = "DP-2";
+          }
+        ];
+        toast = [
+          {
+            model = "G274QPF E2";
+            name = "DP-2";
+          }
+        ];
       };
       showOnLastDisplay = {
         dock = true;
@@ -358,114 +378,122 @@
       };
       niriOutputSettings = { };
       hyprlandOutputSettings = { };
-      barConfigs = [{
-        autoHide = false;
-        autoHideDelay = 250;
-        borderColor = "surfaceText";
-        borderEnabled = false;
-        borderOpacity = 1;
-        borderThickness = 1;
-        bottomGap = 0;
-        centerWidgets = [ "music" "clock" "weather" ];
-        enabled = true;
-        fontScale = 1;
-        gothCornerRadiusOverride = false;
-        gothCornerRadiusValue = 12;
-        gothCornersEnabled = true;
-        id = "default";
-        innerPadding = 4;
-        leftWidgets = [
-          {
-            id = "launcherButton";
-            enabled = true;
-          }
-          {
-            id = "runningApps";
-            enabled = true;
-          }
-          {
-            id = "workspaceSwitcher";
-            enabled = true;
-          }
-          {
-            id = "focusedWindow";
-            enabled = true;
-          }
-        ];
-        maximizeDetection = true;
-        name = "Main Bar";
-        noBackground = false;
-        openOnOverview = false;
-        popupGapsAuto = true;
-        popupGapsManual = 4;
-        position = 0;
-        rightWidgets = [
-          {
-            id = "cpuUsage";
-            enabled = true;
-            minimumWidth = true;
-          }
-          {
-            id = "memUsage";
-            enabled = true;
-            minimumWidth = true;
-          }
-          {
-            id = "network_speed_monitor";
-            enabled = true;
-          }
-          {
-            id = "nixMonitor";
-            enabled = true;
-          }
-          {
-            id = "dockerManager";
-            enabled = true;
-          }
-          {
-            id = "clipboard";
-            enabled = true;
-          }
-          {
-            id = "systemTray";
-            enabled = true;
-          }
-          {
-            id = "controlCenterButton";
-            enabled = true;
-          }
-          {
-            id = "notificationButton";
-            enabled = true;
-          }
-          {
-            id = "powerMenuButton";
-            enabled = true;
-          }
-        ];
-        screenPreferences = [{
-          model = "G274QPF E2";
-          name = "DP-2";
-        }];
-        scrollEnabled = true;
-        scrollXBehavior = "column";
-        scrollYBehavior = "workspace";
-        shadowColorMode = "text";
-        shadowCustomColor = "#000000";
-        shadowIntensity = 0;
-        shadowOpacity = 60;
-        showOnLastDisplay = true;
-        showOnWindowsOpen = false;
-        spacing = 4;
-        squareCorners = false;
-        transparency = 1;
-        visible = true;
-        widgetOutlineColor = "primary";
-        widgetOutlineEnabled = false;
-        widgetOutlineOpacity = 1;
-        widgetOutlineThickness = 1;
-        widgetTransparency = 1;
-      }];
+      barConfigs = [
+        {
+          autoHide = false;
+          autoHideDelay = 250;
+          borderColor = "surfaceText";
+          borderEnabled = false;
+          borderOpacity = 1;
+          borderThickness = 1;
+          bottomGap = 0;
+          centerWidgets = [
+            "music"
+            "clock"
+            "weather"
+          ];
+          enabled = true;
+          fontScale = 1;
+          gothCornerRadiusOverride = false;
+          gothCornerRadiusValue = 12;
+          gothCornersEnabled = true;
+          id = "default";
+          innerPadding = 4;
+          leftWidgets = [
+            {
+              id = "launcherButton";
+              enabled = true;
+            }
+            {
+              id = "runningApps";
+              enabled = true;
+            }
+            {
+              id = "workspaceSwitcher";
+              enabled = true;
+            }
+            {
+              id = "focusedWindow";
+              enabled = true;
+            }
+          ];
+          maximizeDetection = true;
+          name = "Main Bar";
+          noBackground = false;
+          openOnOverview = false;
+          popupGapsAuto = true;
+          popupGapsManual = 4;
+          position = 0;
+          rightWidgets = [
+            {
+              id = "cpuUsage";
+              enabled = true;
+              minimumWidth = true;
+            }
+            {
+              id = "memUsage";
+              enabled = true;
+              minimumWidth = true;
+            }
+            {
+              id = "network_speed_monitor";
+              enabled = true;
+            }
+            {
+              id = "nixMonitor";
+              enabled = true;
+            }
+            {
+              id = "dockerManager";
+              enabled = true;
+            }
+            {
+              id = "clipboard";
+              enabled = true;
+            }
+            {
+              id = "systemTray";
+              enabled = true;
+            }
+            {
+              id = "controlCenterButton";
+              enabled = true;
+            }
+            {
+              id = "notificationButton";
+              enabled = true;
+            }
+            {
+              id = "powerMenuButton";
+              enabled = true;
+            }
+          ];
+          screenPreferences = [
+            {
+              model = "G274QPF E2";
+              name = "DP-2";
+            }
+          ];
+          scrollEnabled = true;
+          scrollXBehavior = "column";
+          scrollYBehavior = "workspace";
+          shadowColorMode = "text";
+          shadowCustomColor = "#000000";
+          shadowIntensity = 0;
+          shadowOpacity = 60;
+          showOnLastDisplay = true;
+          showOnWindowsOpen = false;
+          spacing = 4;
+          squareCorners = false;
+          transparency = 1;
+          visible = true;
+          widgetOutlineColor = "primary";
+          widgetOutlineEnabled = false;
+          widgetOutlineOpacity = 1;
+          widgetOutlineThickness = 1;
+          widgetTransparency = 1;
+        }
+      ];
       desktopClockEnabled = false;
       desktopClockStyle = "analog";
       desktopClockTransparency = 0.8;
@@ -533,7 +561,11 @@
       desktopWidgetGridSettings = { };
       desktopWidgetInstances = [ ];
       desktopWidgetGroups = [ ];
-      builtInPluginSettings = { dms_settings_search = { trigger = "?"; }; };
+      builtInPluginSettings = {
+        dms_settings_search = {
+          trigger = "?";
+        };
+      };
       configVersion = 5;
     };
 
@@ -542,8 +574,7 @@
       nvidiaGpuTempEnabled = true;
       weatherLocation = "94124, California";
       weatherCoordinates = "37.7405612,-122.3896567";
-      wallpaperPath =
-        "${config.home.homeDirectory}/Pictures/Backgrounds/lost-in-space.png";
+      wallpaperPath = "${config.home.homeDirectory}/Pictures/Backgrounds/lost-in-space.png";
     };
 
     clipboardSettings = {

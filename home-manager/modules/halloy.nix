@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   programs.halloy = {
     enable = true;
     package = (config.lib.nixGL.wrap pkgs.halloy);

@@ -1,4 +1,5 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+{
   programs = {
     steam = {
       enable = true;
@@ -6,8 +7,7 @@
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
-      package =
-        pkgs.steam.override { extraPkgs = (pkgs: with pkgs; [ gamemode ]); };
+      package = pkgs.steam.override { extraPkgs = (pkgs: with pkgs; [ gamemode ]); };
     };
     gamemode = {
       enable = true;
@@ -30,7 +30,9 @@
 
   systemd = {
     user.extraConfig = "DefaultLimitNOFILE=1024:1048576";
-    settings.Manager = { DefaultLimitNOFILE = "1024:1048576"; };
+    settings.Manager = {
+      DefaultLimitNOFILE = "1024:1048576";
+    };
   };
 
   environment.variables.WAYLANDDRV_PRIMARY_MONITOR = "DP-2";

@@ -1,7 +1,5 @@
+{ pkgs, ... }:
 {
-  pkgs,
-  ...
-}: {
   programs.starship = {
     enable = true;
     enableNushellIntegration = true;
@@ -73,7 +71,8 @@
         "format" = "[$path]($style)[$read_only]($read_only_style)";
         "home_symbol" = "⌂";
         "read_only" = " ◈";
-        "repo_root_format" = "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) [△](bold bright-blue)";
+        "repo_root_format" =
+          "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) [△](bold bright-blue)";
         "repo_root_style" = "bold blue";
         "style" = "italic blue";
         "truncation_length" = 2;
@@ -101,7 +100,8 @@
       "fill" = {
         "symbol" = " ";
       };
-      "format" = "$singularity$kubernetes$directory$vcsh$fossil_branch$git_branch$git_commit$git_state$git_status$hg_branch$pijul_channel$docker_context$package$c$cmake$cobol$daml$dart$deno$dotnet$elixir$elm$erlang$fennel$golang$guix_shell$haskell$haxe$helm$java$julia$kotlin$gradle$lua$nim$nodejs$ocaml$opa$perl$php$pulumi$purescript$python$raku$rlang$red$ruby$rust$scala$solidity$swift$terraform$vlang$vagrant$zig$buf$conda$meson$spack$memory_usage$aws$gcloud$openstack$azure$crystal$custom$status$os$battery($nix_shell$container$git_metrics\n)$cmd_duration\n$hostname$localip$shlvl$shell$env_var$jobs$sudo$username$character";
+      "format" =
+        "$singularity$kubernetes$directory$vcsh$fossil_branch$git_branch$git_commit$git_state$git_status$hg_branch$pijul_channel$docker_context$package$c$cmake$cobol$daml$dart$deno$dotnet$elixir$elm$erlang$fennel$golang$guix_shell$haskell$haxe$helm$java$julia$kotlin$gradle$lua$nim$nodejs$ocaml$opa$perl$php$pulumi$purescript$python$raku$rlang$red$ruby$rust$scala$solidity$swift$terraform$vlang$vagrant$zig$buf$conda$meson$spack$memory_usage$aws$gcloud$openstack$azure$crystal$custom$status$os$battery($nix_shell$container$git_metrics\n)$cmd_duration\n$hostname$localip$shlvl$shell$env_var$jobs$sudo$username$character";
       "git_branch" = {
         "format" = " [$branch(:$remote_branch)]($style)";
         "only_attached" = true;
@@ -122,8 +122,10 @@
         "behind" = "[▿│[$count](bold white)│](italic red)";
         "conflicted" = "[◪◦](italic bright-magenta)";
         "deleted" = "[✕](italic red)";
-        "diverged" = "[◇ ▴┤[$ahead_count](regular white)│▿┤[$behind_count](regular white)│](italic bright-magenta)";
-        "format" = "([⎪$ahead_behind$staged$modified$untracked$renamed$deleted$conflicted$stashed⎥]($style))";
+        "diverged" =
+          "[◇ ▴┤[$ahead_count](regular white)│▿┤[$behind_count](regular white)│](italic bright-magenta)";
+        "format" =
+          "([⎪$ahead_behind$staged$modified$untracked$renamed$deleted$conflicted$stashed⎥]($style))";
         "modified" = "[●◦](italic yellow)";
         "renamed" = "[◎◦](italic bright-blue)";
         "staged" = "[▪┤[$count](bold white)│](italic bright-cyan)";
@@ -180,15 +182,12 @@
         "unknown_msg" = "[◌](bold dimmed ellow)";
       };
       "nodejs" = {
-        "detect_extensions" = [
-        ];
+        "detect_extensions" = [ ];
         "detect_files" = [
           "package-lock.json"
           "yarn.lock"
         ];
-        "detect_folders" = [
-          "node_modules"
-        ];
+        "detect_folders" = [ "node_modules" ];
         "format" = " [node](italic) [◫ ($version)](bold bright-green)";
         "version_format" = "$\{raw\}";
       };

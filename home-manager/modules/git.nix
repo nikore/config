@@ -27,8 +27,7 @@
           c = "commit";
           p = "push";
           d = "diff";
-          graph =
-            "log --graph --color --pretty=format:'%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n'";
+          graph = "log --graph --color --pretty=format:'%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n'";
           one = "log --oneline --all";
           stat = "status -sb";
           last = "show -1";
@@ -37,9 +36,13 @@
           ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi";
         };
 
-        merge = { conflictstyle = "diff3"; };
+        merge = {
+          conflictstyle = "diff3";
+        };
 
-        diff = { colorMoved = "default"; };
+        diff = {
+          colorMoved = "default";
+        };
 
         push = {
           default = "simple";
@@ -53,17 +56,29 @@
           all = true;
         };
 
-        color = { ui = true; };
+        color = {
+          ui = true;
+        };
 
-        column = { ui = "auto"; };
+        column = {
+          ui = "auto";
+        };
 
-        branch = { sort = "-committerdate"; };
+        branch = {
+          sort = "-committerdate";
+        };
 
-        tag = { sort = "version:refname"; };
+        tag = {
+          sort = "version:refname";
+        };
 
-        submodule = { recurse = "true"; };
+        submodule = {
+          recurse = "true";
+        };
 
-        pull = { ff = "only"; };
+        pull = {
+          ff = "only";
+        };
 
         init = {
           algorithm = "histogram";
@@ -73,9 +88,13 @@
           defaultBranch = "main";
         };
 
-        help = { autocorrect = "prompt"; };
+        help = {
+          autocorrect = "prompt";
+        };
 
-        commit = { verbose = true; };
+        commit = {
+          verbose = true;
+        };
 
         rerere = {
           enabled = true;

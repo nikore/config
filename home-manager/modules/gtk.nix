@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }:
+{
   catppuccin = {
     enable = true;
     flavor = "macchiato";
@@ -17,11 +18,17 @@
         variant = "macchiato";
       };
     };
-    gtk3 = { extraConfig.gtk-application-prefer-dark-theme = true; };
-    gtk4 = { extraConfig.gtk-application-prefer-dark-theme = true; };
+    gtk3 = {
+      extraConfig.gtk-application-prefer-dark-theme = true;
+    };
+    gtk4 = {
+      extraConfig.gtk-application-prefer-dark-theme = true;
+    };
   };
   dconf.settings = {
-    "org/gtk/settings/file-chooser" = { sort-directories-first = true; };
+    "org/gtk/settings/file-chooser" = {
+      sort-directories-first = true;
+    };
     "org/gnome/desktop/interface" = {
       gtk-theme = "catppuccin-macchiato-blue-compact";
       color-scheme = "prefer-dark";
@@ -34,6 +41,7 @@
   };
 
   home.sessionVariables.GTK_THEME = "catppuccin-macchiato-blue-compact";
+  gtk.gtk4.theme = config.gtk.theme;
 
   services.xsettingsd = {
     enable = true;

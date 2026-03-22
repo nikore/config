@@ -1,6 +1,8 @@
 { pkgs, config, ... }:
-let locale = "en_US.UTF-8";
-in {
+let
+  locale = "en_US.UTF-8";
+in
+{
   home = {
     stateVersion = "25.05";
 

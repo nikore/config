@@ -1,4 +1,11 @@
-{ inputs, pkgs, lib, host, ... }: {
+{
+  inputs,
+  pkgs,
+  lib,
+  host,
+  ...
+}:
+{
   wayland.windowManager.hyprland = {
     enable = true;
     package = null;
@@ -126,7 +133,9 @@
         preserve_split = true;
         smart_split = true;
       };
-      master = { new_status = "master"; };
+      master = {
+        new_status = "master";
+      };
       misc = {
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;
@@ -182,7 +191,10 @@
         "$mod CTRL, q, exit"
         "ALT, Tab, cyclenext"
       ];
-      bindm = [ "$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow" ];
+      bindm = [
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
+      ];
       bindel = [
         ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
         ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"

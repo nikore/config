@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.rofi = {
     enable = true;
     font = "JetBrainsMono Nerd Font 24";
@@ -9,6 +10,9 @@
       sidebar-mode = true;
       show-icons = true;
     };
-    plugins = [ pkgs.rofi-calc pkgs.rofi-emoji ];
+    plugins = [
+      pkgs.rofi-calc
+      pkgs.rofi-emoji
+    ];
   };
 }

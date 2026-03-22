@@ -1,4 +1,11 @@
-{ inputs, config, lib, pkgs, ... }: {
+{
+  inputs,
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -8,7 +15,9 @@
         ControllerMode = "bredr";
         Experimental = true;
       };
-      Policy = { AutoEnable = true; };
+      Policy = {
+        AutoEnable = true;
+      };
     };
   };
   environment.systemPackages = with pkgs; [ bluez ];

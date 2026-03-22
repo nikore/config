@@ -48,10 +48,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
-    nixpkgs-patch-493590 = {
-      url = "https://github.com/NixOS/nixpkgs/pull/493590.patch";
-      flake = false;
-    };
+    #    nixpkgs-patch-493590 = {
+    #      url = "https://github.com/NixOS/nixpkgs/pull/493590.patch";
+    #      flake = false;
+    #    };
   };
 
   outputs =

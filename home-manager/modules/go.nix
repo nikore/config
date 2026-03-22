@@ -5,9 +5,7 @@
     enable = true;
 
     env = {
-      GOPATH = [
-        "${config.home.homeDirectory}/projects/go"
-      ];
+      GOPATH = [ "${config.home.homeDirectory}/projects/go" ];
     };
   };
 }

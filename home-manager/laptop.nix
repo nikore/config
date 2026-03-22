@@ -1,4 +1,5 @@
-{ inputs, ... }: {
+{ inputs, ... }:
+{
   xsession.enable = true;
 
   nixGL.packages = inputs.nixGL.packages;

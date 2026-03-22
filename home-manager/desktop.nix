@@ -1,4 +1,5 @@
-{ inputs, ... }: {
+{ inputs, ... }:
+{
   xsession.enable = true;
   imports = [
     ./modules/brave.nix

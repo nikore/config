@@ -12,7 +12,5 @@
     sudo.u2fAuth = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    pam_u2f
-  ];
+  environment.systemPackages = with pkgs; [ pam_u2f ];
 }

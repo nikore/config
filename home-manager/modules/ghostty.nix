@@ -15,7 +15,11 @@
       shell-integration-features = "no-cursor";
 
       font-variation = "wght=100";
-      font-feature = [ "cv08" "cv09" "cv10" ];
+      font-feature = [
+        "cv08"
+        "cv09"
+        "cv10"
+      ];
       font-size = "10";
 
       cursor-style = "block";

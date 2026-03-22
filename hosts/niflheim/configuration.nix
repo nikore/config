@@ -1,10 +1,14 @@
-{ ... }: {
+{ ... }:
+{
   imports = [ ./hardware-configuration.nix ];
 
   networking = {
     hostName = "niflheim";
     domain = "nikore.net";
-    nameservers = [ "10.10.0.2" "10.10.0.3" ];
+    nameservers = [
+      "10.10.0.2"
+      "10.10.0.3"
+    ];
     networkmanager = {
       enable = true;
       ensureProfiles = {

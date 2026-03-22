@@ -1,10 +1,16 @@
-{ inputs, ... }: {
+{ inputs, ... }:
+{
   nix = {
     settings = {
       auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
-    optimise = { automatic = true; };
+    optimise = {
+      automatic = true;
+    };
     gc = {
       automatic = true;
       dates = "weekly";

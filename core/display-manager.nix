@@ -1,8 +1,8 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   programs.dank-material-shell = {
     enable = true;
-    dgop.package =
-      inputs.dgop.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    dgop.package = inputs.dgop.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
     systemd = {
       enable = true;
@@ -12,7 +12,9 @@
     plugins = {
       mediaPlayer = {
         enable = true;
-        settings = { preferredSource = "spotify"; };
+        settings = {
+          preferredSource = "spotify";
+        };
       };
       calculator.enable = true;
       commandRunner.enable = true;
@@ -30,8 +32,7 @@
     useTextGreeter = true;
     settings = {
       default_session = {
-        command =
-          "${pkgs.tuigreet}/bin/tuigreet --width '180' --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd '${pkgs.uwsm}/bin/uwsm start ${inputs.hyprland.packages.x86_64-linux.hyprland}/share/wayland-sessions/hyprland.desktop'";
+        command = "${pkgs.tuigreet}/bin/tuigreet --width '180' --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd '${pkgs.uwsm}/bin/uwsm start ${inputs.hyprland.packages.x86_64-linux.hyprland}/share/wayland-sessions/hyprland.desktop'";
         user = "greeter";
       };
     };
@@ -55,7 +56,10 @@
   users.users.greeter = {
     isNormalUser = false;
     description = "greetd greeter user";
-    extraGroups = [ "video" "audio" ];
+    extraGroups = [
+      "video"
+      "audio"
+    ];
     linger = true;
   };
 

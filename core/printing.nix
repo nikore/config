@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   services = {
     avahi = {
       enable = true;
@@ -7,7 +8,10 @@
     };
     printing = {
       enable = true;
-      drivers = with pkgs; [ cups-filters cups-browsed ];
+      drivers = with pkgs; [
+        cups-filters
+        cups-browsed
+      ];
     };
   };
 }
