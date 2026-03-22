@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   xsession.enable = true;
 
@@ -6,6 +6,13 @@
   nixGL.defaultWrapper = "mesa";
   nixGL.installScripts = [ "mesa" ];
   nixGL.vulkan.enable = true;
+
+  nix = {
+    package = pkgs.nix;
+    extraOptions = ''
+      experimnetal-features = nix-command flakes
+    '';
+  };
 
   imports = [
     ./modules/brave.nix
