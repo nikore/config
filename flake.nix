@@ -47,6 +47,25 @@
       url = "github:anomalyco/opencode";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agent-skills-nix = {
+      url = "github:Kyure-A/agent-skills-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    #Agent skill repos
+    anthropic-skills = {
+      url = "github:anthropics/skills";
+      flake = false;
+    };
+    caveman = {
+      url = "github:JuliusBrussee/caveman";
+      flake = false;
+    };
+    vercel-skills-cli = {
+      url = "github:vercel-labs/skills";
+      flake = false;
+    };
+
     nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
     #    nixpkgs-patch-493590 = {
     #      url = "https://github.com/NixOS/nixpkgs/pull/493590.patch";
@@ -67,6 +86,7 @@
       dgop,
       dms-plugin-registry,
       opencode,
+      agent-skills-nix,
       ...
     }:
     let
@@ -115,6 +135,7 @@
                 catppuccin.homeModules.catppuccin
                 dms.homeModules.dank-material-shell
                 dms-plugin-registry.modules.default
+                agent-skills-nix.homeManagerModules.default
               ];
             };
           }
@@ -133,7 +154,9 @@
             }
             ./home-manager/home.nix
             ./home-manager/laptop.nix
+            ./home-manager/nixcfg.nix
             catppuccin.homeModules.catppuccin
+            agent-skills-nix.homeManagerModules.default
           ];
         };
 
@@ -148,7 +171,9 @@
               };
             }
             ./home-manager/home.nix
+            ./home-manager/nixcfg.nix
             catppuccin.homeModules.catppuccin
+            agent-skills-nix.homeManagerModules.default
           ];
         };
       };

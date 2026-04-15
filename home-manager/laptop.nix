@@ -7,13 +7,6 @@
   nixGL.installScripts = [ "mesa" ];
   nixGL.vulkan.enable = true;
 
-  nix = {
-    package = pkgs.nix;
-    extraOptions = ''
-      experimnetal-features = nix-command flakes
-    '';
-  };
-
   imports = [
     ./modules/brave.nix
     ./modules/desktop_packages.nix

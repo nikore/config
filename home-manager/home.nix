@@ -47,6 +47,7 @@ in
     ./modules/btop.nix
     ./modules/k9s.nix
     ./modules/opencode.nix
+    ./modules/skills.nix
   ];
 
   programs.home-manager.enable = true;

@@ -7,6 +7,9 @@
     vimAlias = true;
     vimdiffAlias = true;
     defaultEditor = true;
+    withPython3 = true;
+    withRuby = true;
+    withNodeJs = true;
   };
 
   home.file = {
@@ -18,14 +21,14 @@
 
   home.packages = with pkgs; [
     python313Packages.python-lsp-server
-    nodePackages.nodemon
-    nodePackages.typescript
-    nodePackages.typescript-language-server
+    nodemon
+    typescript
+    typescript-language-server
     eslint
-    nodePackages.vscode-langservers-extracted
-    nodePackages.yaml-language-server
-    nodePackages.bash-language-server
-    nodePackages.graphql-language-service-cli
+    vscode-langservers-extracted
+    yaml-language-server
+    bash-language-server
+    graphql-language-service-cli
     dockerfile-language-server
     vue-language-server
     lua-language-server

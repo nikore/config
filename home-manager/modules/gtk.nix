@@ -7,6 +7,7 @@
     cursors.enable = true;
     qt5ct.enable = true;
     firefox.force = true;
+    #nvim.enable = false;
   };
   gtk = {
     enable = true;
