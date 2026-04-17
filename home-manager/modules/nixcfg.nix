@@ -1,15 +1,13 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   nix = {
+    package = pkgs.nix;
     settings = {
       auto-optimise-store = true;
       experimental-features = [
         "nix-command"
         "flakes"
       ];
-    };
-    optimise = {
-      automatic = true;
     };
     gc = {
       automatic = true;
