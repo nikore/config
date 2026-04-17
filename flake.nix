@@ -119,6 +119,7 @@
           ./core/display-manager.nix
           ./core/yubikey.nix
           ./core/printing.nix
+          ./core/obs.nix
           catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
           dms.nixosModules.dank-material-shell
@@ -154,7 +155,7 @@
             }
             ./home-manager/home.nix
             ./home-manager/laptop.nix
-            ./home-manager/nixcfg.nix
+            ./home-manager/modules/nixcfg.nix
             catppuccin.homeModules.catppuccin
             agent-skills-nix.homeManagerModules.default
           ];
@@ -171,7 +172,7 @@
               };
             }
             ./home-manager/home.nix
-            ./home-manager/nixcfg.nix
+            ./home-manager/modules/nixcfg.nix
             catppuccin.homeModules.catppuccin
             agent-skills-nix.homeManagerModules.default
           ];
