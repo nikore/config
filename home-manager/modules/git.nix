@@ -20,6 +20,7 @@
         user = {
           name = "Matt Christiansen";
           email = "matt@nikore.net";
+          signingkey = "~/.ssh/github_rsa";
         };
 
         alias = {
@@ -94,6 +95,7 @@
 
         commit = {
           verbose = true;
+          gpgsign = true;
         };
 
         rerere = {
@@ -112,6 +114,8 @@
           autoStash = true;
           updateRefs = true;
         };
+
+        gpg.format = "ssh";
       };
     };
 
