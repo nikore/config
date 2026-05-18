@@ -11,6 +11,7 @@
     package = null;
     portalPackage = null;
     systemd.enable = false;
+    #configType = "lua";
     settings = {
       xwayland.enabled = true;
       general = {
@@ -129,7 +130,6 @@
         ];
       };
       dwindle = {
-        pseudotile = true;
         preserve_split = true;
         smart_split = true;
       };

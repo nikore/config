@@ -1,7 +1,12 @@
-{ pkgs, ... }:
 {
+  inputs,
+  pkgs,
+  ...
+}:
+{
+  nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.default ];
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-zen4;
     supportedFilesystems = [
       "ntfs"
       "xfs"

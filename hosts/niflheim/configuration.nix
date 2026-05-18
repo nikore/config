@@ -8,6 +8,8 @@
     nameservers = [
       "10.10.0.2"
       "10.10.0.3"
+      "fc00:2600:3::2"
+      "fc00:2600:3::3"
     ];
     networkmanager = {
       enable = true;
@@ -24,6 +26,11 @@
               method = "manual";
               address = "192.168.68.5/24";
               gateway = "192.168.68.1";
+            };
+            ipv6 = {
+              addr-gen-mode = "stable-privacy";
+              method = "auto";
+              address1 = "fc00:2600:68::5/64";
             };
           };
         };

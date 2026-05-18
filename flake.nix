@@ -47,6 +47,10 @@
       url = "github:anomalyco/opencode";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-cachyos-kernel = {
+      url = "github:xddxdd/nix-cachyos-kernel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     agent-skills-nix = {
       url = "github:Kyure-A/agent-skills-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -86,6 +90,7 @@
       dgop,
       dms-plugin-registry,
       opencode,
+      nix-cachyos-kernel,
       agent-skills-nix,
       ...
     }:
@@ -99,6 +104,12 @@
         overlays = [
           inputs.nur.overlays.default
           nixGL.overlay
+          nix-cachyos-kernel.overlays.default
+          (_: prev: {
+            openldap = prev.openldap.overrideAttrs {
+              doCheck = !prev.stdenv.hostPlatform.isi686;
+            };
+          })
         ];
       };
     in

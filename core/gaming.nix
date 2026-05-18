@@ -1,5 +1,12 @@
 { inputs, pkgs, ... }:
 {
+  nixpkgs.overlays = [
+    (_: prev: {
+      openldap = prev.openldap.overrideAttrs {
+        doCheck = !prev.stdenv.hostPlatform.isi686;
+      };
+    })
+  ];
   programs = {
     steam = {
       enable = true;
@@ -20,11 +27,12 @@
 
   environment.systemPackages = with pkgs; [
     mangohud
-    lutris
     bottles
     heroic
     vulkan-tools
     gpu-viewer
+    melonds
+    faugus-launcher
   ];
 
   systemd = {
