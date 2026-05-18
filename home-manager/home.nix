@@ -18,7 +18,7 @@ in
   };
 
   xresources.properties = {
-    "Xft.dpi" = 91;
+    "Xft.dpi" = config.local.dpi;
     "Xft.antialias" = 1;
     "Xft.hinting" = 1;
     "Xft.rgba" = "rgb";
@@ -27,6 +27,7 @@ in
   };
 
   imports = [
+    ./modules/local.nix
     ./modules/packages.nix
     ./modules/lsd.nix
     ./modules/git.nix

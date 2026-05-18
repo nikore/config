@@ -51,7 +51,7 @@
       "Xft/HintStyle" = "hintslight";
       "Xft/Antialias" = 1;
       "Xft/RGBA" = "rgb";
-      "Xft/dpi" = 91;
+      "Xft/dpi" = config.local.dpi;
       "Xft/lcdfilter" = "lcddefault";
       "Gtk/MonospaceFontName" = "JetBrainsMono Nerd Font 10";
       "Gtk/FontName" = "Noto Sans Display 10";

@@ -1,11 +1,14 @@
 { inputs, pkgs, ... }:
 {
+  local.dpi = 106;
   xsession.enable = true;
 
-  nixGL.packages = inputs.nixGL.packages;
-  nixGL.defaultWrapper = "mesa";
-  nixGL.installScripts = [ "mesa" ];
-  nixGL.vulkan.enable = true;
+  targets.genericLinux.nixGL = {
+    packages = inputs.nixGL.packages;
+    defaultWrapper = "mesa";
+    installScripts = [ "mesa" ];
+    vulkan.enable = true;
+  };
 
   imports = [
     ./modules/brave.nix

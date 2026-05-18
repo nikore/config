@@ -1,5 +1,6 @@
 { inputs, ... }:
 {
+  local.dpi = 96;
   xsession.enable = true;
   imports = [
     ./modules/brave.nix

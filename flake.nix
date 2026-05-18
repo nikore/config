@@ -12,7 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixGL = {
-      url = "github:nikore/nixGL";
+      url = "github:nix-community/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser = {
@@ -96,7 +96,10 @@
           allowUnfree = true;
           allowFreePredicate = (_: true);
         };
-        overlays = [ inputs.nur.overlays.default ];
+        overlays = [
+          inputs.nur.overlays.default
+          nixGL.overlay
+        ];
       };
     in
     {
