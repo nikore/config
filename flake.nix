@@ -35,10 +35,6 @@
       url = "github:AvengeMedia/dgop";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    dsearch = {
-      url = "github:AvengeMedia/danksearch";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     dms-plugin-registry = {
       url = "github:AvengeMedia/dms-plugin-registry";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -70,7 +66,10 @@
       flake = false;
     };
 
-    nixpkgs-patcher.url = "github:gepbird/nixpkgs-patcher";
+    nixpkgs-patcher = {
+      url = "github:gepbird/nixpkgs-patcher";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     #    nixpkgs-patch-493590 = {
     #      url = "https://github.com/NixOS/nixpkgs/pull/493590.patch";
     #      flake = false;
@@ -79,42 +78,33 @@
 
   outputs =
     inputs@{
-      self,
       nixpkgs,
       nixGL,
       home-manager,
-      zen-browser,
-      hyprland,
       catppuccin,
       dms,
-      dgop,
       dms-plugin-registry,
-      opencode,
-      nix-cachyos-kernel,
       agent-skills-nix,
+      nixpkgs-patcher,
       ...
     }:
     let
-      pkgs = import nixpkgs {
-        system = "x86_64-linux";
+      system = "x86_64-linux";
+      patchedNixpkgs = nixpkgs-patcher.lib.patchNixpkgs { inherit inputs system; };
+      pkgs = import patchedNixpkgs {
+        inherit system;
         config = {
           allowUnfree = true;
-          allowFreePredicate = (_: true);
         };
         overlays = [
           inputs.nur.overlays.default
           nixGL.overlay
-          nix-cachyos-kernel.overlays.default
-          (_: prev: {
-            openldap = prev.openldap.overrideAttrs {
-              doCheck = !prev.stdenv.hostPlatform.isi686;
-            };
-          })
         ];
       };
     in
     {
-      nixosConfigurations.niflheim = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.niflheim = import "${patchedNixpkgs}/nixos/lib/eval-config.nix" {
+        inherit system;
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/niflheim/configuration.nix
@@ -143,7 +133,9 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               backupFileExtension = "backup";
-              extraSpecialArgs = { inherit inputs; };
+              extraSpecialArgs = {
+                inherit inputs;
+              };
               users.matt.imports = [
                 ./home-manager/home.nix
                 ./home-manager/desktop.nix
