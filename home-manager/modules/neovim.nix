@@ -83,61 +83,164 @@
         # as its dev.path (see below).
         plugins = with pkgs.vimPlugins; [
           alpha-nvim
-          aerial-nvim
-          blink-cmp
-          bufferline-nvim
-          conform-nvim
-          crates-nvim
-          clangd_extensions-nvim
-          flash-nvim
+          {
+            name = "aerial.nvim";
+            path = aerial-nvim;
+          }
+          {
+            name = "blink.cmp";
+            path = blink-cmp;
+          }
+          {
+            name = "bufferline.nvim";
+            path = bufferline-nvim;
+          }
+          {
+            name = "conform.nvim";
+            path = conform-nvim;
+          }
+          {
+            name = "crates.nvim";
+            path = crates-nvim;
+          }
+          {
+            name = "clangd_extensions.nvim";
+            path = clangd_extensions-nvim;
+          }
+          {
+            name = "flesh.nvim";
+            path = flash-nvim;
+          }
           friendly-snippets
           fzf-lua
-          gitsigns-nvim
-          grug-far-nvim
-          gh-nvim
-          helm-ls-nvim
-          indent-blankline-nvim
-          lazydev-nvim
-          lazy-nvim
+          {
+            name = "gitsigns.nvim";
+            path = gitsigns-nvim;
+          }
+          {
+            name = "grug-far.nvim";
+            path = grug-far-nvim;
+          }
+          {
+            name = "gh.nvim";
+            path = gh-nvim;
+          }
+          {
+            name = "helm-ls.nvim";
+            path = helm-ls-nvim;
+          }
+          {
+            name = "indent-blankline.nvim";
+            path = indent-blankline-nvim;
+          }
+          {
+            name = "lazydev.nvim";
+            path = lazydev-nvim;
+          }
+          {
+            name = "lazy.nvim";
+            path = lazy-nvim;
+          }
           LazyVim
-          lualine-nvim
-          markdown-preview-nvim
-          mini-ai
-          mini-icons
-          mini-pairs
-          neoconf-nvim
+          {
+            name = "lualine.nvim";
+            path = lualine-nvim;
+          }
+          {
+            name = "markdown-preview.nvim";
+            path = markdown-preview-nvim;
+          }
+          {
+            name = "mini.ai";
+            path = mini-ai;
+          }
+          {
+            name = "mini.icons";
+            path = mini-icons;
+          }
+          {
+            name = "mini.pairs";
+            path = mini-pairs;
+          }
+          {
+            name = "neoconf.nvim";
+            path = neoconf-nvim;
+          }
           neotest
           neotest-golang
           neotest-python
           neotest-rust
           neotest-gtest
-          neo-tree-nvim
-          noice-nvim
-          nui-nvim
-          none-ls-nvim
+          {
+            name = " neo-tree.nvim";
+            path = neo-tree-nvim;
+          }
+          {
+            name = "noice.nvim";
+            path = noice-nvim;
+          }
+          {
+            name = "nui.nvim";
+            path = nui-nvim;
+          }
+          {
+            name = "none-ls.nvim";
+            path = none-ls-nvim;
+          }
           nvim-ansible
           nvim-jdtls
           nvim-lint
           nvim-lspconfig
           nvim-treesitter
           nvim-treesitter-textobjects
+          nvim-treesitter-context
           nvim-ts-autotag
-          persistence-nvim
-          plenary-nvim
-          render-markdown-nvim
+          nvim-ts-context-commentstring
+          {
+            name = "persistence.nvim";
+            path = persistence-nvim;
+          }
+          {
+            name = "plenary.nvim";
+            path = plenary-nvim;
+          }
+          {
+            name = "render-markdown.nvim";
+            path = render-markdown-nvim;
+          }
           rustaceanvim
-          snacks-nvim
-          todo-comments-nvim
-          tokyonight-nvim
-          trouble-nvim
-          ts-comments-nvim
-          which-key-nvim
-          rustaceanvim
+          {
+            name = "snacks.nvim";
+            path = snacks-nvim;
+          }
+          {
+            name = "todo-comments.nvim";
+            path = todo-comments-nvim;
+          }
+          {
+            name = "tokyonight.nvim";
+            path = tokyonight-nvim;
+          }
+          {
+            name = "trouble.nvim";
+            path = trouble-nvim;
+          }
+          {
+            name = "ts-comments.nvim";
+            path = ts-comments-nvim;
+          }
+          {
+            name = "which-key.nvim";
+            path = which-key-nvim;
+          }
           vim-illuminate
           vim-startuptime
           vim-sleuth
           vim-go
-          yanky-nvim
+          {
+            name = "yanky.nvim";
+            path = yanky-nvim;
+          }
 
           # When a plugin's name in nixpkgs doesn't match what Lazy expects,
           # you can manually specify the mapping like this:
