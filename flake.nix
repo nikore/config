@@ -47,6 +47,10 @@
       url = "github:xddxdd/nix-cachyos-kernel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    helium = {
+      url = "github:oxcl/nix-flake-helium-browser";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     agent-skills-nix = {
       url = "github:Kyure-A/agent-skills-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -86,6 +90,7 @@
       dms-plugin-registry,
       agent-skills-nix,
       nixpkgs-patcher,
+      helium,
       ...
     }:
     let
@@ -97,6 +102,7 @@
           allowUnfree = true;
         };
         overlays = [
+          helium.overlays.default
           inputs.nur.overlays.default
           nixGL.overlay
         ];
@@ -127,7 +133,7 @@
           catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
           dms.nixosModules.dank-material-shell
-          dms-plugin-registry.modules.default
+          dms-plugin-registry.nixosModules.default
           {
             home-manager = {
               useGlobalPkgs = true;
@@ -141,7 +147,8 @@
                 ./home-manager/desktop.nix
                 catppuccin.homeModules.catppuccin
                 dms.homeModules.dank-material-shell
-                dms-plugin-registry.modules.default
+                dms-plugin-registry.homeModules.default
+                helium.homeModules.default
                 agent-skills-nix.homeManagerModules.default
               ];
             };
@@ -162,6 +169,7 @@
             ./home-manager/home.nix
             ./home-manager/laptop.nix
             ./home-manager/modules/nixcfg.nix
+            helium.homeModules.default
             catppuccin.homeModules.catppuccin
             agent-skills-nix.homeManagerModules.default
           ];

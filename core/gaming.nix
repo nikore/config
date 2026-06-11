@@ -14,7 +14,17 @@
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
-      package = pkgs.steam.override { extraPkgs = (pkgs: with pkgs; [ gamemode ]); };
+      extraCompatPackages = with pkgs; [
+        proton-ge-bin
+        nur.repos.mio.proton-cachyos_x86_64_v4
+      ];
+      package = pkgs.steam.override {
+        extraPkgs = (
+          pkgs: with pkgs; [
+            gamemode
+          ]
+        );
+      };
     };
     gamemode = {
       enable = true;

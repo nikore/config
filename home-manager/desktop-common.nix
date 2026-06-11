@@ -10,5 +10,6 @@
     ./modules/zen.nix
     ./modules/radio-cli.nix
     ./modules/vscode.nix
+    ./modules/helium.nix
   ];
 }

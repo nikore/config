@@ -172,7 +172,7 @@
           neotest-rust
           neotest-gtest
           {
-            name = " neo-tree.nvim";
+            name = "neo-tree.nvim";
             path = neo-tree-nvim;
           }
           {

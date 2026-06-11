@@ -15,6 +15,7 @@
     settings = {
       plugin = [
         "oh-my-openagent@latest"
+        "@ex-machina/opencode-anthropic-auth@latest"
       ];
     };
   };
