@@ -6,6 +6,6 @@
     ./desktop-common.nix
     ./modules/dms.nix
     ./modules/openrgb.nix
-    ./modules/hyprland.nix
+    ./modules/niri.nix
   ];
 }

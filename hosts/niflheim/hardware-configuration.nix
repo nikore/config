@@ -11,36 +11,39 @@
 
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
-
-  boot.initrd.availableKernelModules = [
-    "nvme"
-    "xhci_pci"
-    "ahci"
-    "usbhid"
-    "usb_storage"
-    "sd_mod"
-  ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
-
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/b401d92e-50cf-48be-8dc9-a012734f4bbe";
-    fsType = "ext4";
-  };
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/CE93-C478";
-    fsType = "vfat";
-    options = [
-      "fmask=0022"
-      "dmask=0022"
+  boot = {
+    initrd.availableKernelModules = [
+      "nvme"
+      "xhci_pci"
+      "ahci"
+      "usbhid"
+      "usb_storage"
+      "sd_mod"
     ];
+    initrd.kernelModules = [ ];
+    kernelModules = [ "kvm-amd" ];
+    extraModulePackages = [ ];
   };
 
-  fileSystems."/home/matt" = {
-    device = "/dev/disk/by-uuid/24e24d18-013a-4d7e-8847-4751d08fde47";
-    fsType = "xfs";
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-uuid/b401d92e-50cf-48be-8dc9-a012734f4bbe";
+      fsType = "ext4";
+    };
+
+    "/boot" = {
+      device = "/dev/disk/by-uuid/CE93-C478";
+      fsType = "vfat";
+      options = [
+        "fmask=0022"
+        "dmask=0022"
+      ];
+    };
+
+    "/home/matt" = {
+      device = "/dev/disk/by-uuid/24e24d18-013a-4d7e-8847-4751d08fde47";
+      fsType = "xfs";
+    };
   };
 
   swapDevices = [ ];
@@ -62,7 +65,7 @@
       powerManagement.enable = true;
       open = true;
       nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
   };
 }

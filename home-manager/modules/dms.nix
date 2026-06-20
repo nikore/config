@@ -436,11 +436,18 @@
               minimumWidth = true;
             }
             {
-              id = "network_speed_monitor";
+              id = "cpuTemp";
               enabled = true;
+              minimumWidth = true;
             }
             {
-              id = "nixMonitor";
+              id = "gpuTemp";
+              enabled = true;
+              selectedGpuIndex = 0;
+              pciId = "10de:2704";
+            }
+            {
+              id = "network_speed_monitor";
               enabled = true;
             }
             {

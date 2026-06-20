@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}:
 {
   programs.dank-material-shell = {
     enable = true;
@@ -32,7 +37,7 @@
     useTextGreeter = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --width '180' --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd '${pkgs.uwsm}/bin/uwsm start ${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/share/wayland-sessions/hyprland.desktop'";
+        command = "${pkgs.tuigreet}/bin/tuigreet --width '180' --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd '${config.programs.niri.package}/bin/niri-session'";
         user = "greeter";
       };
     };

@@ -1,22 +1,11 @@
 {
-  inputs,
   pkgs,
-  lib,
-  host,
   ...
 }:
 {
-  imports = [ inputs.hyprland.nixosModules.default ];
-
   programs = {
-    hyprland = {
+    niri = {
       enable = true;
-      xwayland.enable = true;
-      withUWSM = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      portalPackage =
-        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland.override
-          { hyprland = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default; };
     };
     xfconf = {
       enable = true;
@@ -36,11 +25,10 @@
 
   services = {
     tumbler.enable = true;
+    gnome.gnome-keyring.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
-    hyprcursor
-    hyprpolkitagent
     playerctl
     libnotify
     wl-clipboard
@@ -50,6 +38,7 @@
     fprintd
     libsForQt5.qt5ct
     kdePackages.qt6ct
+    xwayland-satellite
   ];
 
   catppuccin = {
@@ -58,4 +47,6 @@
     flavor = "macchiato";
     accent = "blue";
   };
+
+  systemd.user.services.niri.enableDefaultPath = false;
 }

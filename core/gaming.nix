@@ -46,7 +46,6 @@
   ];
 
   systemd = {
-    user.extraConfig = "DefaultLimitNOFILE=1024:1048576";
     settings.Manager = {
       DefaultLimitNOFILE = "1024:1048576";
     };
