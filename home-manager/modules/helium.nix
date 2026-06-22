@@ -6,7 +6,7 @@
 {
   programs.helium = {
     enable = true;
-    package = (config.lib.nixGL.wrap inputs.helium.packages.x86_64-linux.helium);
+    package = inputs.helium.packages.x86_64-linux.helium;
     flags = [
       "--start-maximized"
       "--force-dark-mode"

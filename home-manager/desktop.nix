@@ -6,6 +6,6 @@
     ./desktop-common.nix
     ./modules/dms.nix
     ./modules/openrgb.nix
-    ./modules/niri.nix
+    ./modules/niri/desktop.nix
   ];
 }

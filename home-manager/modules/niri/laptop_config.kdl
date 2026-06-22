@@ -1,13 +1,9 @@
 spawn-sh-at-startup "1password --silent"
-spawn-sh-at-startup "jetbrains-toolbox --minimize"
-spawn-sh-at-startup "dropbox start"
-spawn-sh-at-startup "xrandr --output DP-2 --primary"
+
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 environment {
-    LIBVA_DRIVER_NAME "nvidia"
-    __GLX_VENDOR_LIBRARY_NAME "nvidia"
     NIXOS_OZONE_WL "1"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
 }
@@ -30,36 +26,38 @@ input {
 
     mouse {
     }
+    touchpad {
+        tap
+        drag true
+        drag-lock
+        disabled-on-external-mouse
+    }
 
     warp-mouse-to-focus
     focus-follows-mouse max-scroll-amount="0%"
 }
 
-output "DP-1" {
-    mode "1920x1080@164.92"
-    scale 1
-    transform "normal"
-    position x=4480 y=0
-}
-
-output "DP-2" {
-    mode "2560x1440@180.00"
-    scale 1
-    transform "normal"
-    position x=1920 y=0
-}
-
 output "DP-3" {
-    mode "1920x1080@164.92"
+    mode "3440x1440@60.00"
     scale 1
     transform "normal"
     position x=0 y=0
+    focus-at-startup
+}
+
+output "eDP-1" {
+    mode "2256x1504@60.00"
+    scale 1
+    transform "normal"
+    position x=0 y=0
+    focus-at-startup
 }
 
 layout {
     gaps 12
     always-center-single-column
     default-column-display "tabbed"
+    background-color "#000"
 
     preset-column-widths {
         proportion 0.33333
@@ -108,7 +106,7 @@ overview {
 }
 
 binds {
-    Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+Space hotkey-overlay-title="Spotlight" { spawn-sh "dms ipc call spotlight toggle"; }
     Mod+S hotkey-overlay-title="Screenshot" { spawn-sh "dms screenshot --no-file"; }
     Mod+V hotkey-overlay-title="Paste" { spawn-sh "dms ipc call clipboard toggle"; }
@@ -176,63 +174,45 @@ binds {
 
 }
 
+workspace "terminal" {
+}
+
 workspace "chat" {
-    open-on-output "DP-3"
 }
 
 workspace "web" {
-    open-on-output "DP-1"
-}
-
-workspace "terminal" {
-    open-on-output "DP-2"
-}
-
-workspace "gaming" {
-    open-on-output "DP-2"
-}
-
-workspace "work" {
-    open-on-output "DP-2"
 }
 
 window-rule {
-    match app-id=r#".*ghostty"#
+    match app-id=r#".*Alacritty"#
 
     open-maximized true
-
     open-on-workspace "terminal"
-    open-on-output "DP-2"
 }
 
 window-rule {
     match app-id=r#".*discord"#
 
     open-on-workspace "chat"
-    open-on-output "DP-3"
 }
 
 window-rule {
     match app-id=r#".*slack"#
 
     open-on-workspace "chat"
-    open-on-output "DP-3"
 }
 
 window-rule {
     match app-id=r#".*signal.*"#
 
     open-on-workspace "chat"
-    open-on-output "DP-3"
 }
 
 window-rule {
     match app-id=r#".*zen-twilight"#
 
     open-maximized true
-
     open-on-workspace "web"
-    open-on-output "DP-1"
 }
 
 window-rule {
@@ -240,30 +220,13 @@ window-rule {
 
     open-maximized true
     open-on-workspace "web"
-    open-on-output "DP-1"
-}
-
-window-rule {
-    match app-id=r#".*Spotify"#
-
-    open-on-output "DP-1"
-}
-
-window-rule {
-    match app-id=r#"steam.*"#
-    match title=r#"steam.*"#
-
-    open-fullscreen true
-    open-on-output "DP-2"
-    open-on-workspace "gaming"
 }
 
 window-rule {
     match title=r#".*Google Chrome"#
 
     open-maximized true
-    open-on-output "DP-2"
-    open-on-workspace "work"
+    open-on-workspace "web"
 }
 
 window-rule {

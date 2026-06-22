@@ -1,8 +1,15 @@
-{ config, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   programs.dank-material-shell = {
     enable = true;
     managePluginSettings = true;
+    systemd.enable = true;
+    quickshell.package = config.lib.pamShim.replacePam pkgs.quickshell;
 
     plugins = {
       mediaPlayer = {
@@ -228,7 +235,7 @@
       batterySuspendBehavior = 0;
       batteryProfileName = "";
       batteryChargeLimit = 100;
-      lockBeforeSuspend = false;
+      lockBeforeSuspend = true;
       loginctlLockIntegration = true;
       fadeToLockEnabled = true;
       fadeToLockGracePeriod = 5;
@@ -290,6 +297,8 @@
       lockScreenShowPasswordField = true;
       enableFprint = false;
       maxFprintTries = 15;
+      enableU2f = true;
+      u2fMode = "or";
       lockScreenActiveMonitor = "all";
       lockScreenInactiveColor = "#000000";
       lockScreenNotificationMode = 0;

@@ -44,5 +44,6 @@
     yq-go
     zoxide
     zsh
+    wuffs
   ];
 }

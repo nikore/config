@@ -2,7 +2,7 @@
 {
   programs.halloy = {
     enable = true;
-    package = (config.lib.nixGL.wrap pkgs.halloy);
+    package = pkgs.halloy;
     settings = {
       buffer.channel.topic.enabled = true;
       servers.liberachat = {

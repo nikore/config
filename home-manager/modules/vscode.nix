@@ -2,7 +2,7 @@
 {
   programs.vscode = {
     enable = true;
-    package = (config.lib.nixGL.wrap pkgs.vscode);
+    package = pkgs.vscode;
     profiles.default = {
       userSettings = {
         enableUpdateCheck = false;

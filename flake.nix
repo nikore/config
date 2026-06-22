@@ -11,10 +11,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixGL = {
-      url = "github:nix-community/nixGL";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -51,6 +47,18 @@
       url = "github:Kyure-A/agent-skills-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    system-manager = {
+      url = "github:numtide/system-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-system-graphics = {
+      url = "github:soupglasses/nix-system-graphics";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    pam-shim = {
+      url = "github:Cu3PO42/pam_shim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     #Agent skill repos
     anthropic-skills = {
@@ -79,7 +87,8 @@
   outputs =
     inputs@{
       nixpkgs,
-      nixGL,
+      system-manager,
+      nix-system-graphics,
       home-manager,
       catppuccin,
       dms,
@@ -87,6 +96,7 @@
       agent-skills-nix,
       nixpkgs-patcher,
       helium,
+      pam-shim,
       ...
     }:
     let
@@ -100,7 +110,6 @@
         overlays = [
           helium.overlays.default
           inputs.nur.overlays.default
-          nixGL.overlay
         ];
       };
     in
@@ -168,6 +177,9 @@
             helium.homeModules.default
             catppuccin.homeModules.catppuccin
             agent-skills-nix.homeManagerModules.default
+            dms.homeModules.dank-material-shell
+            dms-plugin-registry.homeModules.default
+            pam-shim.homeModules.default
           ];
         };
 
@@ -187,6 +199,18 @@
             agent-skills-nix.homeManagerModules.default
           ];
         };
+      };
+      systemConfigs.workLaptop = system-manager.lib.makeSystemConfig {
+        modules = [
+          nix-system-graphics.systemModules.default
+          {
+            config = {
+              nixpkgs.hostPlatform = system;
+              system-manager.allowAnyDistro = true;
+              system-graphics.enable = true;
+            };
+          }
+        ];
       };
     };
 }

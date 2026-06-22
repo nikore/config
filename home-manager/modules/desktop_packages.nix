@@ -1,36 +1,36 @@
 { pkgs, config, ... }:
 {
   home.packages = with pkgs; [
-    (config.lib.nixGL.wrap _1password-gui)
+    _1password-gui
     cliphist
-    (config.lib.nixGL.wrap darktable)
-    (config.lib.nixGL.wrap discord)
-    (config.lib.nixGL.wrap dropbox-cli)
+    darktable
+    discord
+    dropbox-cli
     dconf
-    (config.lib.nixGL.wrap filezilla)
-    (config.lib.nixGL.wrap gimp)
-    (config.lib.nixGL.wrap handbrake)
-    (config.lib.nixGL.wrap plexamp)
-    (config.lib.nixGL.wrap plex-desktop)
-    (config.lib.nixGL.wrap proton-vpn)
-    (config.lib.nixGL.wrap proton-authenticator)
-    (config.lib.nixGL.wrap protonmail-desktop)
-    (config.lib.nixGL.wrap signal-desktop)
-    (config.lib.nixGL.wrap slack)
-    (config.lib.nixGL.wrap spotify)
+    filezilla
+    gimp
+    handbrake
+    plexamp
+    plex-desktop
+    proton-vpn
+    proton-authenticator
+    protonmail-desktop
+    signal-desktop
+    slack
+    spotify
     spotifyd
-    (config.lib.nixGL.wrap standardnotes)
-    (config.lib.nixGL.wrap vlc)
-    (config.lib.nixGL.wrap zoom-us)
-    (config.lib.nixGL.wrap lmstudio)
+    standardnotes
+    vlc
+    zoom-us
+    lmstudio
     feh
     protonup-rs
-    (config.lib.nixGL.wrap jetbrains-toolbox)
+    jetbrains-toolbox
   ];
 
   programs.google-chrome = {
     enable = true;
-    package = (config.lib.nixGL.wrap pkgs.google-chrome);
+    package = pkgs.google-chrome;
     commandLineArgs = [ "--ozone-platform=x11" ];
   };
 }

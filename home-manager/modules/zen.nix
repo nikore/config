@@ -10,7 +10,7 @@
 
   programs.zen-browser = {
     enable = true;
-    package = lib.mkForce (config.lib.nixGL.wrap inputs.zen-browser.packages.x86_64-linux.twilight);
+    package = lib.mkForce inputs.zen-browser.packages.x86_64-linux.twilight;
     nativeMessagingHosts = [ pkgs.firefoxpwa ];
     policies = {
       AutofillAddressEnabled = true;

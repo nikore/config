@@ -2,6 +2,6 @@
 {
   programs.brave = {
     enable = true;
-    package = (config.lib.nixGL.wrap pkgs.brave);
+    package = pkgs.brave;
   };
 }
