@@ -182,7 +182,6 @@
             pam-shim.homeModules.default
           ];
         };
-
         shellOnly = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = { inherit inputs; };

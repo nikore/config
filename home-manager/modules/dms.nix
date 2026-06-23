@@ -9,7 +9,7 @@
     enable = true;
     managePluginSettings = true;
     systemd.enable = true;
-    quickshell.package = config.lib.pamShim.replacePam pkgs.quickshell;
+    quickshell.package = if config.lib ? pamShim then config.lib.pamShim.replacePam pkgs.quickshell else pkgs.quickshell;
 
     plugins = {
       mediaPlayer = {
