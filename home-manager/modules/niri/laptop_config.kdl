@@ -30,7 +30,6 @@ input {
         tap
         drag true
         drag-lock
-        disabled-on-external-mouse
     }
 
     warp-mouse-to-focus
@@ -38,10 +37,9 @@ input {
 }
 
 output "DP-3" {
-    mode "3440x1440@60.00"
+    mode "3440x1440@120.000"
     scale 1
-    transform "normal"
-    position x=0 y=0
+    position x=2256 y=0
     focus-at-startup
 }
 
@@ -50,7 +48,6 @@ output "eDP-1" {
     scale 1
     transform "normal"
     position x=0 y=0
-    focus-at-startup
 }
 
 layout {
@@ -113,6 +110,8 @@ binds {
     Mod+N hotkey-overlay-title="File Manager" { spawn "thunar"; }
     Mod+Shift+Z hotkey-overlay-title="lock" { spawn-sh "dms ipc call lock lock"; }
     Mod+Ctrl+S hotkey-overlay-title="Settings" { spawn-sh "dms ipc call settings toggle"; }
+    Mod+Shift+E hotkey-overlay-title="Disable Laptop Display" { spawn-sh "niri msg output eDP-1 off"; }
+    Mod+Ctrl+E hotkey-overlay-title="Enable Laptop Display" { spawn-sh "niri msg output eDP-1 on"; }
     
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
