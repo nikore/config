@@ -12,6 +12,7 @@
     vimAlias = true;
     vimdiffAlias = true;
     defaultEditor = true;
+    sideloadInitLua = true;
     withPython3 = true;
     withRuby = true;
     withNodeJs = true;
@@ -25,6 +26,8 @@
       fd
       tree-sitter # treesitter cli
       imagemagick
+      gcc
+      gnumake
 
       # Language Servers (make sure to install these,
       # they can easily be configured via the extras available
@@ -59,6 +62,11 @@
       autotools-language-server
       protobuf-language-server
       systemd-language-server
+      ruff
+      vscode-langservers-extracted
+      emmet-language-server
+      vtsls
+      biome
     ];
 
     plugins = with pkgs.vimPlugins; [ lazy-nvim ];

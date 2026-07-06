@@ -29,4 +29,13 @@
     enable = true;
     userAllowOther = true;
   };
+
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      glibc
+      zlib
+      openssl
+    ];
+  };
 }

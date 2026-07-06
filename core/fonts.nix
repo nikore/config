@@ -10,7 +10,6 @@
     noto-fonts-color-emoji
     noto-fonts
     dejavu_fonts
-    cantarell-fonts
     source-sans
     montserrat
     comfortaa
