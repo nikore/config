@@ -59,6 +59,10 @@
       url = "github:Cu3PO42/pam_shim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    chaotic-nyx = {
+      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     #Agent skill repos
     anthropic-skills = {
@@ -139,6 +143,7 @@
           home-manager.nixosModules.home-manager
           dms.nixosModules.dank-material-shell
           dms-plugin-registry.nixosModules.default
+          inputs.chaotic-nyx.nixosModules.default
           {
             home-manager = {
               useGlobalPkgs = true;

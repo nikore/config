@@ -277,6 +277,29 @@
       in
       # lua
       ''
+        vim.opt.number = true
+        vim.opt.mouse = "a"
+        vim.opt.showmode = false
+        vim.opt.clipboard = "unnamedplus"
+        vim.opt.breakindent = true
+        vim.opt.undofile = true
+        vim.opt.ignorecase = true
+        vim.opt.smartcase = true
+        vim.opt.signcolumn = "yes"
+        vim.opt.updatetime = 250
+        vim.opt.timeoutlen = 300
+        vim.opt.splitright = true
+        vim.opt.splitbelow = true
+        vim.opt.list = true
+        vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+        vim.opt.inccommand = "split"
+        vim.opt.cursorline = true
+        vim.opt.scrolloff = 10
+        vim.opt.tabstop = 4
+        vim.opt.shiftwidth = 4
+        vim.opt.softtabstop = 4
+        vim.opt.expandtab = true
+        vim.o.termguicolors = true
         require("lazy").setup({
           defaults = {
             lazy = true,
@@ -335,10 +358,5 @@
           checker = { enabled = false }, -- disable automatic update checking
         })
       '';
-  };
-
-  xdg.configFile."nvim/lua" = {
-    source = config.lib.file.mkOutOfStoreSymlink ./nvim/lua;
-    recursive = true;
   };
 }

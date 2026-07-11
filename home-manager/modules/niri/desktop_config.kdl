@@ -36,7 +36,7 @@ input {
 }
 
 output "DP-1" {
-    mode "1920x1080@164.92"
+    mode "1920x1080@164.917"
     scale 1
     transform "normal"
     position x=4480 y=0
@@ -50,7 +50,7 @@ output "DP-2" {
 }
 
 output "DP-3" {
-    mode "1920x1080@164.92"
+    mode "1920x1080@164.917"
     scale 1
     transform "normal"
     position x=0 y=0

@@ -9,7 +9,8 @@
     enable = true;
     managePluginSettings = true;
     systemd.enable = true;
-    quickshell.package = if config.lib ? pamShim then config.lib.pamShim.replacePam pkgs.quickshell else pkgs.quickshell;
+    quickshell.package =
+      if config.lib ? pamShim then config.lib.pamShim.replacePam pkgs.quickshell else pkgs.quickshell;
 
     plugins = {
       mediaPlayer = {
@@ -177,10 +178,12 @@
       mediaSize = 1;
       appLauncherViewMode = "list";
       spotlightModalViewMode = "list";
+      appPickerViewMode = "grid";
       sortAppsAlphabetically = false;
       appLauncherGridColumns = 4;
       spotlightCloseNiriOverview = true;
       niriOverviewOverlayEnabled = true;
+      launcherStyle = "spotlight";
       useAutoLocation = false;
       weatherEnabled = true;
       networkPreference = "auto";
@@ -587,10 +590,63 @@
 
     session = {
       isLightMode = false;
-      nvidiaGpuTempEnabled = true;
+      doNotDisturb = false;
+      doNotDisturbUntil = 0;
+      wallpaperPath = "${config.home.homeDirectory}/Pictures/Backgrounds/lost-in-space.png";
+      perMonitorWallpaper = false;
+      perModeWallpaper = false;
+      wallpaperTransition = "fade";
+      includedTransitions = [
+        "fade"
+        "wipe"
+        "disc"
+        "stripes"
+        "iris bloom"
+        "pixelate"
+        "portal"
+      ];
+      wallpaperCyclingEnabled = false;
+      wallpaperCyclingMode = "interval";
+      wallpaperCyclingInterval = 300;
+      wallpaperCyclingTime = "06:00";
+      nightModeEnabled = false;
+      nightModeTemperature = 4500;
+      nightModeHighTemperature = 6500;
+      nightModeAutoEnabled = false;
+      nightModeAutoMode = "time";
+      nightModeStartHour = 18;
+      nightModeStartMinute = 0;
+      nightModeEndHour = 6;
+      nightModeEndMinute = 0;
+      latitude = 0;
+      longitude = 0;
+      nightModeUseIPLocation = false;
+      nightModeLocationProvider = "";
+      themeModeAutoEnabled = false;
+      themeModeAutoMode = "time";
+      themeModeStartHour = 18;
+      themeModeStartMinute = 0;
+      themeModeEndHour = 6;
+      themeModeEndMinute = 0;
+      themeModeShareGammaSettings = true;
       weatherLocation = "94124, California";
       weatherCoordinates = "37.7405612,-122.3896567";
-      wallpaperPath = "${config.home.homeDirectory}/Pictures/Backgrounds/lost-in-space.png";
+      showThirdPartyPlugins = false;
+      pluginBrowserInstalledFirst = false;
+      pluginBrowserSortMode = "default";
+      selectedGpuIndex = 0;
+      nvidiaGpuTempEnabled = true;
+      nonNvidiaGpuTempEnabled = false;
+      weatherHourlyDetailed = true;
+      searchAppActions = true;
+      lastPlayerIdentity = "Mozilla zen-twilight";
+      launcherLastMode = "all";
+      launcherLastFileSearchType = "all";
+      appDrawerLastMode = "apps";
+      niriOverviewLastMode = "apps";
+      settingsSidebarExpandedIds = ",";
+      settingsSidebarCollapsedIds = ",";
+      configVersion = 3;
     };
 
     clipboardSettings = {

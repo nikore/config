@@ -16,7 +16,7 @@
       localNetworkGameTransfers.openFirewall = true;
       extraCompatPackages = with pkgs; [
         proton-ge-bin
-        nur.repos.mio.proton-cachyos_x86_64_v4
+        proton-cachyos_x86_64_v3
       ];
       package = pkgs.steam.override {
         extraPkgs = (

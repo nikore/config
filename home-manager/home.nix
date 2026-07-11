@@ -48,6 +48,7 @@ in
     ./modules/btop.nix
     ./modules/k9s.nix
     ./modules/opencode.nix
+    ./modules/pi.nix
     ./modules/skills.nix
   ];
 
