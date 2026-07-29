@@ -24,9 +24,12 @@
         "npm:pi-web-access"
         "npm:pi-mcp-adapter"
         "npm:context-mode"
+        "npm:pi-subagents"
         "npm:@tintinweb/pi-subagents"
         "npm:pi-lens"
+        "npm:bigpowers"
         "npm:@dietrichgebert/ponytail"
+        "npm:@remnic/plugin-pi"
       ];
     };
     models = { };

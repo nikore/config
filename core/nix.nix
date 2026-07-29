@@ -2,6 +2,7 @@
 {
   nix = {
     settings = {
+      http-connections = 50;
       auto-optimise-store = true;
       experimental-features = [
         "nix-command"

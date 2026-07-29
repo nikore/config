@@ -40,6 +40,7 @@ output "DP-1" {
     scale 1
     transform "normal"
     position x=4480 y=0
+    variable-refresh-rate
 }
 
 output "DP-2" {
@@ -47,6 +48,8 @@ output "DP-2" {
     scale 1
     transform "normal"
     position x=1920 y=0
+    variable-refresh-rate
+    focus-at-startup
 }
 
 output "DP-3" {
@@ -54,6 +57,7 @@ output "DP-3" {
     scale 1
     transform "normal"
     position x=0 y=0
+    variable-refresh-rate
 }
 
 layout {
