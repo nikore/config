@@ -2,10 +2,10 @@
   programs.pi-coding-agent = {
     enable = true;
     settings = {
-      defaultProvider = "us.anthropic";
+      defaultProvider = "anthropic";
       defaultModel = "claude-opus-4-7";
       defaultThinkingLevel = "medium";
-      theme = "dark";
+      theme = "catppuccin-macchiato";
       compaction = {
         enabled = true;
         reserveTokens = 16384;
@@ -30,6 +30,7 @@
         "npm:bigpowers"
         "npm:@dietrichgebert/ponytail"
         "npm:@remnic/plugin-pi"
+        "npm:@sherif-fanous/pi-catppuccin"
       ];
     };
     models = { };
