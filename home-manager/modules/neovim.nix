@@ -250,6 +250,105 @@
             path = yanky-nvim;
           }
 
+          nvim-dap
+          nvim-dap-ui
+          nvim-dap-go
+          nvim-dap-rr
+          nvim-dap-rego
+          nvim-dap-view
+          nvim-dap-lldb
+          nvim-dap-ruby
+          nvim-dap-python
+          nvim-dap-docker
+          nvim-dap-disasm
+          nvim-dap-vscode-js
+          nvim-dap-virtual-text
+          nvim-dap-cortex-debug
+          harpoon
+
+          {
+            name = "markdown-preview.nvim";
+            path = markdown-preview-nvim;
+          }
+
+          {
+            name = "plenary.nvim";
+            path = plenary-nvim;
+          }
+
+          {
+            name = "outline.nvim";
+            path = outline-nvim;
+          }
+
+          {
+            name = "leap.nvim";
+            path = leap-nvim;
+          }
+
+          {
+            name = "SchemaStore.nvim";
+            path = SchemaStore-nvim;
+          }
+          dashboard-nvim
+
+          {
+            name = "nui.nvim";
+            path = nui-nvim;
+          }
+
+          {
+            name = "overseer.nvim";
+            path = overseer-nvim;
+          }
+
+          vim-repeat
+
+          {
+            name = "mini.animate";
+            path = mini-animate;
+          }
+
+          {
+            name = "mini.comment";
+            path = mini-comment;
+          }
+
+          {
+            name = "mini.diff";
+            path = mini-diff;
+          }
+
+          {
+            name = "mini.move";
+            path = mini-move;
+          }
+
+          {
+            name = "mini.starter";
+            path = mini-starter;
+          }
+
+          {
+            name = "mini.files";
+            path = mini-files;
+          }
+
+          {
+            name = "mini.hipatterns";
+            path = mini-hipatterns;
+          }
+
+          {
+            name = "mini.indentscope";
+            path = mini-indentscope;
+          }
+
+          {
+            name = "mini.surround";
+            path = mini-surround;
+          }
+
           # When a plugin's name in nixpkgs doesn't match what Lazy expects,
           # you can manually specify the mapping like this:
           {
@@ -320,7 +419,7 @@
 
             -- language specific config is often available via an extra
             -- find available languages here: https://www.lazyvim.org/extras or via :LazyExtras
-            -- { import = "lazyvim.plugins.extras.lang.nix" }, -- configure lsp/formatters/treesitter etc. for nix 
+            -- { import = "lazyvim.plugins.extras.lang.nix" }, -- configure lsp/formatters/treesitter etc. for nix
 
             -- disable mason.nvim, use programs.neovim.extraPackages
             { "mason-org/mason-lspconfig.nvim", enabled = false },
@@ -353,8 +452,8 @@
               },
             },
           },
-          -- see https://www.lazyvim.org/plugins/colorscheme on how to change/install colorschemes 
-          install = { colorscheme = { "tokyonight", "catppuccin" } },
+          -- see https://www.lazyvim.org/plugins/colorscheme on how to change/install colorschemes
+          install = { colorscheme = { "tokyonight" } },
           checker = { enabled = false }, -- disable automatic update checking
         })
       '';

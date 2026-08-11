@@ -1,13 +1,11 @@
 {
   pkgs,
-  inputs,
   config,
   ...
 }:
 {
   programs.dank-material-shell = {
     enable = true;
-    dgop.package = inputs.dgop.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
     systemd = {
       enable = true;

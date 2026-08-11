@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
 {
   programs.opencode = {
-    enable = true;
+    enable = false;
     package = inputs.opencode.packages.${pkgs.stdenv.hostPlatform.system}.opencode.overrideAttrs (old: {
       preBuild = (old.preBuild or "") + ''
         substituteInPlace packages/opencode/src/cli/cmd/generate.ts \
