@@ -7,6 +7,7 @@
     package = pkgs.starship;
     settings = {
       "add_newline" = true;
+      "command_timeout" = 3600000;
       "battery" = {
         "charging_symbol" = "[↑](italic bold green)";
         "discharging_symbol" = "↓";
