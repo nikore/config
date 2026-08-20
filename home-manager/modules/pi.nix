@@ -3,8 +3,8 @@
     enable = true;
     settings = {
       defaultProvider = "anthropic";
-      defaultModel = "claude-opus-4-7";
-      defaultThinkingLevel = "medium";
+      defaultModel = "claude-opus-5";
+      defaultThinkingLevel = "high";
       theme = "catppuccin-macchiato";
       compaction = {
         enabled = true;
@@ -29,8 +29,11 @@
         "npm:pi-lens"
         "npm:bigpowers"
         "npm:@dietrichgebert/ponytail"
-        "npm:@remnic/plugin-pi"
         "npm:@sherif-fanous/pi-catppuccin"
+        "npm:@narumitw/pi-goal"
+        "npm:@juicesharp/rpiv-todo"
+        "npm:@juicesharp/rpiv-ask-user-question"
+        "npm:pi-background-tasks"
       ];
     };
     models = { };
