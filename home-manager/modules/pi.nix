@@ -2,9 +2,9 @@
   programs.pi-coding-agent = {
     enable = true;
     settings = {
-      defaultProvider = "anthropic";
-      defaultModel = "claude-opus-5";
-      defaultThinkingLevel = "high";
+      defaultProvider = "openai-codex";
+      defaultModel = "gpt-5.6-luna";
+      defaultThinkingLevel = "xhigh";
       theme = "catppuccin-macchiato";
       compaction = {
         enabled = true;

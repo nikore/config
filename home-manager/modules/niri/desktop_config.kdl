@@ -12,6 +12,10 @@ environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
 }
 
+debug {
+  wait-for-frame-completion-before-queueing
+}
+
 hotkey-overlay {
     skip-at-startup
 }
@@ -36,28 +40,28 @@ input {
 }
 
 output "DP-1" {
-    mode "1920x1080@164.917"
+    mode "2560x1440@240.000"
     scale 1
     transform "normal"
-    position x=4480 y=0
-    variable-refresh-rate
+    position x=5120 y=0
+    variable-refresh-rate on-demand=true
 }
 
 output "DP-2" {
-    mode "2560x1440@180.00"
+    mode "2560x1440@240.000"
     scale 1
     transform "normal"
-    position x=1920 y=0
-    variable-refresh-rate
+    position x=2560 y=0
+    variable-refresh-rate on-demand=true
     focus-at-startup
 }
 
 output "DP-3" {
-    mode "1920x1080@164.917"
+    mode "2560x1440@240.000"
     scale 1
     transform "normal"
     position x=0 y=0
-    variable-refresh-rate
+    variable-refresh-rate on-demand=true
 }
 
 layout {
@@ -256,6 +260,15 @@ window-rule {
 window-rule {
     match app-id=r#"steam.*"#
     match title=r#"steam.*"#
+
+    open-fullscreen true
+    open-on-output "DP-2"
+    open-on-workspace "gaming"
+}
+
+window-rule {
+    match app-id=r#"gamescope.*"#
+    match title=r#"gamescope.*"#
 
     open-fullscreen true
     open-on-output "DP-2"

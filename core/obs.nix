@@ -17,7 +17,6 @@
       obs-vaapi
       obs-gstreamer
       obs-vkcapture
-      obs-dvd-screensaver
     ];
   };
 }

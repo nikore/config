@@ -11,6 +11,12 @@
       "ntfs"
       "xfs"
     ];
+    kernelParams = [
+      "consoleblank=0"
+      "video=DP-1:2560x1440@240"
+      "video=DP-2:2560x1440@240"
+      "video=DP-3:2560x1440@240"
+    ];
     consoleLogLevel = 3;
     loader = {
       limine = {
@@ -36,7 +42,7 @@
     };
     tmp = {
       useTmpfs = true;
-      tmpfsSize = "16%";
+      tmpfsSize = "20%";
     };
     binfmt = {
       emulatedSystems = [
