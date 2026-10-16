@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       defaultProvider = "openai-codex";
-      defaultModel = "gpt-5.6-luna";
+      defaultModel = "gpt-6-luna";
       defaultThinkingLevel = "xhigh";
       theme = "catppuccin-macchiato";
       compaction = {
@@ -34,6 +34,10 @@
         "npm:@juicesharp/rpiv-todo"
         "npm:@juicesharp/rpiv-ask-user-question"
         "npm:pi-background-tasks"
+        "npm:billion-context"
+      ];
+      extensions = [
+        "-builtin:mcp"
       ];
     };
     models = { };

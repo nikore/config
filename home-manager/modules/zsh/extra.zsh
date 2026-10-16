@@ -2,6 +2,7 @@
 
 #path+=("$HOME/bin")
 #path+=("$HOME/.cargo/bin")
+#path+=("$HOME/.local/bin")
 
 export GOPATH=${HOME}/projects/go
 export SSH_KEY_PATH="${HOME}/.ssh/rsa_id"
