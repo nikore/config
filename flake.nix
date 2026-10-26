@@ -20,11 +20,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dms = {
-      url = "github:AvengeMedia/DankMaterialShell/stable";
+      url = "github:duxlabs-dev/dux-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dms-plugin-registry = {
-      url = "github:AvengeMedia/dms-plugin-registry";
+      url = "github:duxlabs-dev/dux-plugin-registry";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dfiles = {
+      url = "github:duxlabs-dev/dux-files";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dsearch = {
+      url = "github:duxlabs-dev/dux-search";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-cachyos-kernel = {
@@ -89,6 +97,7 @@
       catppuccin,
       dms,
       dms-plugin-registry,
+      dfiles,
       agent-skills-nix,
       nixpkgs-patcher,
       helium,
@@ -150,6 +159,8 @@
                 catppuccin.homeModules.catppuccin
                 dms.homeModules.dank-material-shell
                 dms-plugin-registry.homeModules.default
+                dfiles.homeModules.dux-files
+                inputs.dsearch.homeModules.dsearch
                 helium.homeModules.default
                 agent-skills-nix.homeManagerModules.default
               ];
@@ -176,6 +187,8 @@
             agent-skills-nix.homeManagerModules.default
             dms.homeModules.dank-material-shell
             dms-plugin-registry.homeModules.default
+            dfiles.homeModules.dux-files
+            inputs.dsearch.homeModules.dsearch
             pam-shim.homeModules.default
           ];
         };

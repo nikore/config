@@ -116,7 +116,7 @@ overview {
 }
 
 binds {
-    Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+Space hotkey-overlay-title="Spotlight" { spawn-sh "dms ipc call spotlight toggle"; }
     Mod+S hotkey-overlay-title="Screenshot" { spawn-sh "dms screenshot --no-file"; }
     Mod+V hotkey-overlay-title="Paste" { spawn-sh "dms ipc call clipboard toggle"; }
@@ -206,6 +206,7 @@ workspace "work" {
 
 window-rule {
     match app-id=r#".*Alacritty"#
+    match app-id=r#".*ghostty.*"#
 
     open-maximized true
 

@@ -5,9 +5,21 @@
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = [ "Noto Serif Display" ];
-        sansSerif = [ "Noto Sans Display" ];
-        monospace = [ "JetBrainsMono Nerd Font" ];
+        serif = [
+          "Noto Serif Display"
+          "Noto Color Emoji"
+          "Noto Emoji"
+        ];
+        sansSerif = [
+          "Noto Sans Display"
+          "Noto Color Emoji"
+          "Noto Emoji"
+        ];
+        monospace = [
+          "JetBrainsMono Nerd Font"
+          "Noto Color Emoji"
+          "Noto Emoji"
+        ];
         emoji = [
           "Noto Color Emoji"
           "Noto Emoji"

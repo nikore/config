@@ -9,7 +9,7 @@
     dconf
     filezilla
     gimp
-    handbrake
+    #handbrake
     plexamp
     plex-desktop
     proton-vpn
@@ -20,6 +20,7 @@
     spotify
     spotifyd
     standardnotes
+    tailscale
     vlc
     zoom-us
     lmstudio
