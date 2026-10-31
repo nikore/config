@@ -38,7 +38,6 @@
     };
     initrd = {
       enable = true;
-      systemd.enable = true;
     };
     tmp = {
       useTmpfs = true;
