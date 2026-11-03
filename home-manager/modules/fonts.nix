@@ -6,12 +6,12 @@
       enable = true;
       defaultFonts = {
         serif = [
-          "Noto Serif Display"
+          "Noto Serif"
           "Noto Color Emoji"
           "Noto Emoji"
         ];
         sansSerif = [
-          "Noto Sans Display"
+          "Noto Sans"
           "Noto Color Emoji"
           "Noto Emoji"
         ];

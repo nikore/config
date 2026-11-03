@@ -233,7 +233,7 @@
         launcherLogoBrightness = 0.5;
         launcherLogoContrast = 1;
         launcherLogoSizeOffset = 0;
-        fontFamily = "Noto Sans Display";
+        fontFamily = "Noto Sans";
         monoFontFamily = "JetBrainsMono Nerd Font Mono";
         fontWeight = 400;
         fontScale = 1;

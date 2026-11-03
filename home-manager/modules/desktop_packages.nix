@@ -9,7 +9,7 @@
     dconf
     filezilla
     gimp
-    #handbrake
+    handbrake
     plexamp
     plex-desktop
     proton-vpn

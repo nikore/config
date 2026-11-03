@@ -63,14 +63,18 @@
       url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lightforge = {
+      url = "github:LightforgeProject/lightforge";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    netwatch = {
+      url = "github:matthart1983/netwatch";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     #Agent skill repos
     anthropic-skills = {
       url = "github:anthropics/skills";
-      flake = false;
-    };
-    caveman = {
-      url = "github:JuliusBrussee/caveman";
       flake = false;
     };
     vercel-skills-cli = {

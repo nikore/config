@@ -4,32 +4,6 @@
   ...
 }:
 {
-  programs.dank-material-shell = {
-    enable = true;
-
-    systemd = {
-      enable = true;
-      restartIfChanged = true;
-    };
-
-    plugins = {
-      mediaPlayer = {
-        enable = true;
-        settings = {
-          preferredSource = "spotify";
-        };
-      };
-      calculator.enable = true;
-      commandRunner.enable = true;
-      dockerManager.enable = true;
-      emojiLauncher.enable = true;
-      kubernetes.enable = true;
-      nixMonitor.enable = true;
-    };
-  };
-
-  programs.dsearch.enable = true;
-
   services.greetd = {
     enable = true;
     useTextGreeter = true;

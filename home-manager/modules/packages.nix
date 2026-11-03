@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -29,14 +29,15 @@
     lazydocker
     lynx
     ncdu
-    minio-client
+    #inputs.netwatch.packages.x86_64-linux.netwatch
+    netwatch
+    rclone
     mtr
     pass
     ripgrep
     rustup
     speedtest-cli
     spotify-player
-    tmate
     tmux
     tmuxinator
     wiremix
