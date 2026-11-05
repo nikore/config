@@ -19,12 +19,7 @@
 
   environment.systemPackages = with pkgs; [
     nvidia-docker
-    podman-compose
-    podman-tui
-    docker-compose
     qemu
-    distrobox
-    distrobox-tui
     crun
     runc
     conmon

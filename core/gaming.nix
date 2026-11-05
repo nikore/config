@@ -36,16 +36,6 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    mangohud
-    bottles
-    heroic
-    vulkan-tools
-    gpu-viewer
-    melonds
-    openlinkhub
-  ];
-
   systemd = {
     settings.Manager = {
       DefaultLimitNOFILE = "1024:1048576";

@@ -5,7 +5,7 @@
   imports = [
     ./desktop-common.nix
     ./modules/dms.nix
-    ./modules/openrgb.nix
+    ./modules/gaming_packages.nix
     ./modules/niri/desktop.nix
   ];
 }

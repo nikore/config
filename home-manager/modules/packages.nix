@@ -8,7 +8,10 @@
     bluetui
     ctop
     dive
+    distrobox
+    distrobox-tui
     doggo
+    docker-compose
     fastfetch
     fd
     git-extras
@@ -34,6 +37,8 @@
     rclone
     mtr
     pass
+    podman-compose
+    podman-tui
     ripgrep
     rustup
     speedtest-cli

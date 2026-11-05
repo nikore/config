@@ -10,6 +10,8 @@
     filezilla
     gimp
     handbrake
+    pavucontrol
+    playerctl
     plexamp
     plex-desktop
     proton-vpn
@@ -25,8 +27,9 @@
     zoom-us
     lmstudio
     feh
-    protonup-rs
     jetbrains-toolbox
+    libsForQt5.qt5ct
+    kdePackages.qt6ct
   ];
 
   programs.google-chrome = {

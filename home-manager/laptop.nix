@@ -7,5 +7,6 @@
     ./desktop-common.nix
     ./modules/dms.nix
     ./modules/niri/laptop.nix
+    ./modules/gaming_packages.nix
   ];
 }

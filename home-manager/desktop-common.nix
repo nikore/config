@@ -12,6 +12,5 @@
     ./modules/radio-cli.nix
     ./modules/vscode.nix
     ./modules/helium.nix
-    ./modules/runescape.nix
   ];
 }
