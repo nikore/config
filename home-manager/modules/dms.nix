@@ -1,8 +1,15 @@
 {
   config,
+  inputs,
   pkgs,
   ...
 }:
+let
+  replacePam = package:
+    if config.lib ? pamShim then config.lib.pamShim.replacePam package else package;
+  dmsPkgs = inputs.dms.lib.buildDmsPkgs pkgs;
+  dfilesPkgs = inputs.dfiles.lib.buildDfilesPkgs pkgs;
+in
 {
   programs = {
     dsearch = {
@@ -10,8 +17,7 @@
     };
     dux-files = {
       enable = true;
-      quickshell.package =
-        if config.lib ? pamShim then config.lib.pamShim.replacePam pkgs.quickshell else pkgs.quickshell;
+      duxQtBase.package = replacePam dfilesPkgs.dux-qt-base;
       portal = {
         enable = true; # register the dfiles backend with xdg-desktop-portal
         preferred = true; # prefer it for org.freedesktop.impl.portal.FileChooser
@@ -20,8 +26,7 @@
     };
     dank-material-shell = {
       enable = true;
-      quickshell.package =
-        if config.lib ? pamShim then config.lib.pamShim.replacePam pkgs.quickshell else pkgs.quickshell;
+      duxQtBase.package = replacePam dmsPkgs.dux-qt-base;
       managePluginSettings = true;
       systemd = {
         enable = true;

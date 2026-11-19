@@ -32,8 +32,7 @@
     lazydocker
     lynx
     ncdu
-    #inputs.netwatch.packages.x86_64-linux.netwatch
-    netwatch
+    inputs.netwatch.packages.${pkgs.system}.netwatch
     rclone
     mtr
     pass

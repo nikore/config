@@ -277,6 +277,24 @@ window-rule {
 }
 
 window-rule {
+    match app-id=r#"Lightforge.*"#
+    match title=r#"Lightforge.*"#
+
+    open-fullscreen true
+    open-on-output "dp-2"
+    open-on-workspace "gaming"
+}
+
+window-rule {
+    match app-id=r#"wow.exe.*"#
+    match title=r#"World of Warcraft.*"#
+
+    open-fullscreen true
+    open-on-output "dp-2"
+    open-on-workspace "gaming"
+}
+
+window-rule {
     match title=r#".*Google Chrome"#
 
     open-maximized true

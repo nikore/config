@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [
     ./mangohud.nix
@@ -13,5 +13,6 @@
     melonds
     bolt-launcher
     runelite
+    inputs.lightforge.packages.${pkgs.system}.lightforge
   ];
 }

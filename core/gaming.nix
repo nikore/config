@@ -17,7 +17,6 @@
       extraCompatPackages = with pkgs; [
         proton-ge-bin
         proton-cachyos_x86_64_v3
-        inputs.lightforge.packages.${pkgs.system}.lightforge
       ];
       package = pkgs.steam.override {
         extraPkgs = (

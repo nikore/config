@@ -119,6 +119,7 @@
         overlays = [
           helium.overlays.default
           inputs.nur.overlays.default
+          inputs.dms.overlays.default
         ];
       };
     in

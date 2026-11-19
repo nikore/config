@@ -2,7 +2,7 @@
 {
   imports = [
     ./modules/alacritty.nix
-    ./modules/brave.nix
+    #    ./modules/brave.nix
     ./modules/desktop_packages.nix
     ./modules/ghostty.nix
     ./modules/gtk.nix
